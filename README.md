@@ -1,4 +1,4 @@
-# js-ku
+# js-kud
 [js-ku](http://www.js-ku.com) 
 #需要遵守的[约定](http://js-ku.com/test/md-test.html) 
 1.提交各自文件`xxx.md`到 *_posts* 文件夹下。 
