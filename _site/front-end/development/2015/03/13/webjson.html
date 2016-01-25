@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>前后端数据交互方法。 - js开发库</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="介绍几种常用的前后端数据交互方法，并给出使用建议。以提高前后端协同开发的效率。 此文章适合前后端协同开发经验不足的新手阅读。">
+<meta name="keywords" content="前后端数据交互方式">
+<meta name="author" content="EthanOrange">
+<link href="/res/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/res/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="/res/css/jcarousel.css" rel="stylesheet" />
+<link href="/res/css/flexslider.css" rel="stylesheet" />
+<link href="/res/css/style.css" rel="stylesheet" />
+<!-- Theme skin -->
+<link href="/res/skins/default.css" rel="stylesheet" />
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+		<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><span>JS</span>开发库</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">Home</a></li>
+<!--                         <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="components.html">Components</a></li>
+								<li><a href="pricingbox.html">Pricing box</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li class="active"><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header>
+
+	<!-- end header -->
+	<section id="content">
+	<div class="container">
+ 		<h2 id="section">前后端数据交互方法</h2>
+
+<p>介绍几种常用的前后端数据交互方法，并给出使用建议。以提高前后端协同开发的效率。 
+此文章适合前后端协同开发经验不足的<strong>新手阅读</strong>。</p>
+
+<h4 id="i-classicon-pencilihtml"><i class="icon-pencil"></i>HTML赋值:</h4>
+
+<blockquote>
+  <ul>
+    <li>输出到 Element 的 value 或 data-name.</li>
+    <li><code>&lt;input type="hidden" value="&lt;?php echo $user_avatar;?&gt;" /&gt;</code></li>
+    <li><code>&lt;div data-value="&lt;?php echo $user_avatar;?&gt;"&gt;&lt;/div&gt;</code></li>
+  </ul>
+</blockquote>
+
+<p><strong>渲染结果:</strong></p>
+
+<p>输出到 Element 的 value 或 data-name.
+<code>&lt;input type="hidden" value="https://avatars1.githubusercontent.com/u/3949015?v=3&amp;s=40" /&gt;</code>
+ <code>&lt;div data-avatar="https://avatars1.githubusercontent.com/u/3949015?v=3&amp;s=40"&gt;&lt;/div&gt;</code></p>
+
+<p><strong>使用 JS 获取:</strong></p>
+
+<p><code>$('input').val() // http://jquery.bootcss.com/jQuery.data/</code>
+ <code>$('div').data('avatar')</code></p>
+
+<p><strong>优点:</strong></p>
+
+<p>不占用全局变量，由 JS 自由获取。</p>
+
+<p><strong>使用建议：适合传递简单数据，也非常适合多个简单数据与 Element 绑定关系</strong></p>
+
+<pre><code>&lt;ul&gt;
+	&lt;li&gt;nimojs &lt;span data-userid="1" &gt;删除&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;nimo22 &lt;span data-userid="2" &gt;删除&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;nimo33 &lt;span data-userid="3" &gt;删除&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;nimo44 &lt;span data-userid="4" &gt;删除&lt;/span&gt;&lt;/li&gt;
+	&lt;li&gt;nimo55 &lt;span data-userid="5" &gt;删除&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+$('span').on('click',function(){
+    $.post('/ajax/remove/',$(this).data('userid'),function(data){
+        // ...
+    })
+})
+&lt;/script&gt;
+</code></pre>
+
+<h4 id="i-classicon-pencilijs"><i class="icon-pencil"></i>JS赋值:</h4>
+
+<blockquote>
+  <ul>
+    <li>将数据填充到 <code>&lt;script&gt;</code> 的 JavaScript 变量声明中。</li>
+  </ul>
+</blockquote>
+
+<pre><code>&lt;script&gt;
+var user_avatar = "&lt;?php echo $user_avatar;?&gt;";
+// 渲染结果
+// var user_avatar = "https://avatars1.githubusercontent.com/u/3949015?v=3&amp;s=40";
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>或使用 Smarty 后端模板引擎：</strong></p>
+
+<p>输出到 Element 的 value 或 data-name.</p>
+
+<pre><code>&lt;script&gt;
+var user_avatar = "{$user_avatar}";
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>优点： 传递数据非常方便。前端直接调用 user_avatar 变量使用数据。</strong>
+ <strong>缺点： 1. 为了传递一个字符串数据占用了全局变量 user_avatar，当有很多数据需要传输时则会占用很多全局变量。 2. 如果返回数据存在换行将会导致JS报错</strong></p>
+
+<pre><code> // 渲染结果有换行符
+var user_id = "
+
+https://avatars1.githubusercontent.com/u/3949015?v=3&amp;s=40";
+// Uncaught SyntaxError: Unexpected token ILLEGAL
+</code></pre>
+
+<p>**优化 **</p>
+
+<p>不占用全局变量，由 JS 自由获取。</p>
+
+<p><strong>可以通过指向的某一个变量存放所有后端返回的内容，最小程度占用全局变量。例：</strong></p>
+
+<pre><code>// PHP 代码
+var SERVER_DATA = {
+    username: {$username},
+    userid: {$userid},
+    title: {$title}
+}
+// 渲染结果
+var SERVER_DATA = {
+    username: "NimoChu",
+    userid: 1,
+    title: 'F2E'
+}  **使用建议： ** &gt;需要最快速度传递数据给 JS 并十分确定此数据稳定时，使用此方式。数据格式复杂的建议使用script填充JSON 或AJAX获取JSON 方法。
+</code></pre>
+
+<h4 id="i-classicon-penciliscriptjson"><i class="icon-pencil"></i>script填充JSON:</h4>
+
+<blockquote>
+  <ul>
+    <li>填充 JSON 数据到 <code>&lt;script&gt;</code> 标签中，前端通过 DOM 获取 JSON字符串并解析成对象。</li>
+  </ul>
+</blockquote>
+
+<pre><code>&lt;script type="text/template" id="data"&gt;{"username":"nimojs","userid":1}&lt;/script&gt;
+&lt;script&gt;
+var data = JSON.parse($('#data').html());
+//{username:"nimojs",userid:1}
+&lt;/script&gt;
+</code></pre>
+
+<blockquote>
+  <p><strong>优点： 页面加载完成后就可以获取到数据。不占用全局变量，可传递大量数据集合。</strong></p>
+
+  <p><strong>缺点：数据量特别大时会导致页面初次加载变慢。变慢并不只是文件大小导致的，也因为服务器查询数据并返回合集是需要时间，可使用AJAX获取JSON完成按需加载和加载等待。</strong></p>
+</blockquote>
+
+<p>**使用建议： **
+&gt;适合传递在DOM加载完成时就需要用到的大量数据集合。例如：前端控制页面渲染，后端将JSON数据源填充到 <code>&lt;script&gt;</code> 由前端使用 JavaScript模板引擎进行页面渲染。</p>
+
+<h4 id="i-classicon-penciliajaxjson"><i class="icon-pencil"></i>AJAX获取JSON</h4>
+
+<p>使用 AJAX 获取JSON数据</p>
+
+<pre><code>&lt;span id="showdata"&gt;查看资料&lt;/span&gt;
+&lt;div style="display:none;" id="box"&gt;
+    &lt;h2&gt;用户信息&lt;/h2&gt;
+    &lt;p id="info"&gt;&lt;img src="loading.gif" /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+$('#showdata').on('click',function(){
+    $('#box').show();
+    $.getJSON('/ajax/userdata/',function(oData){
+        // oData = {"username":"nimojs","userid":1}
+        $('#info').html('用户名：' + oData.username + '&lt;br&gt;用户ID：' + oData.userid);
+    })
+})
+&lt;/script&gt;
+</code></pre>
+
+<p><strong>这是一个通过AJAX 获取用户资料的示例。流程如下：</strong></p>
+
+<ol>
+  <li>页面上只显示查看资料</li>
+  <li>用户点击查看资料</li>
+  <li>显示用户信息和 loading 图片</li>
+  <li>向服务器发送获取用户信息的AJAX请求</li>
+  <li>服务器返回JSON字符串，$.getJSON 自动将返回的 JSON字符串转换为对象</li>
+  <li>填充内容到 <code>&lt;p id="info"&gt;</code></li>
+</ol>
+
+<blockquote>
+  <p><strong>优点：不占用全局变量和 DOM 节点，可以自由控制获取数据的触发条件（页面加载完成时、用户点击查看资料时或用户点击某个按钮时）。当开始获取数据时可使用 loading 图片占位提示用户数据正在读取。防止页面加载所有数据导致的页面加载缓慢。</strong></p>
+
+  <p><strong>缺点：会产生额外的HTTP请求。不能在DOM加载完成以后立即获取，需要发送请求-接收响应。</strong></p>
+</blockquote>
+
+<p>**使用建议： **
+&gt;适合加载非主要信息、设定触发条件（用户点击查看资料时），并提供友好的数据读取等待提示。
+&gt;</p>
+
+<h4 id="i-classicon-penciliwebsocket"><i class="icon-pencil"></i>WebSocket实时传输数据:</h4>
+
+<blockquote>
+  <ul>
+    <li>如果将 AJAX请求和响应比喻成给服务器发短信和等待服务器回复短信，而 WebSocket 就如同和服务器打电话。</li>
+  </ul>
+</blockquote>
+
+<p>此处不对WebSocket做过多介绍。</p>
+
+<h4 id="i-classicon-pencili"><i class="icon-pencil"></i>总结</h4>
+
+<blockquote>
+  <ul>
+    <li>每种情况都有每种情况的用处，没有绝对正确的方法。根据实际情况灵活的选择获取数据方式。</li>
+  </ul>
+</blockquote>
+
+	</div>
+	</section>
+	 <footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">联系我们</h5>
+					<address>
+					<strong>JS开发库</strong><br>
+					 由一群热爱技术的年轻人创建。<br>
+					  </address>
+					<p>
+						<i class="icon-phone"></i> QQ群 364778978 <br>
+						<i class="icon-envelope-alt"></i> service@js-ku.com
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">Pages</h5>
+					<ul class="link-list">
+						<li><a href="#">Press release</a></li>
+						<li><a href="#">Terms and conditions</a></li>
+						<li><a href="#">Privacy policy</a></li>
+						<li><a href="#">Career center</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">友情链接</h5>
+					<ul class="link-list">
+						<li><a href="http://j-ui.com" target="_blank">富客户端框架-jUI</a></li>
+						<li><a href="http://www.qeo.cn/31/" target="_blank">网络工程师培训</a></li>
+						<li><a href="http://www.lingjianfeng.com/" target="_blank">Cocos2d-JS 教程</a></li>
+					</ul>
+				</div>
+			</div>
+<!-- 			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">Flickr photostream</h5>
+					<div class="flickr_badge">
+						<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+			</div> -->
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">Collaborators</h5>
+						<div class="flickr_badge" id="authors_div">
+							
+					   
+					    
+					</div>
+					<div class="clear">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							<span>&copy; Js-ku 2014 All right reserved. By </span><a href="https://github.com/Da-Li/js-ku" target="_blank">GitHub</a>
+						</p>
+					</div>
+				</div>
+				 <div class="col-lg-6">
+					<ul class="social-network">
+						<li><a href="https://github.com/Da-Li/js-ku" target="_blank" data-placement="top" title="GitHub"><i class="fa fa-github"></i></a></li>
+<!-- 						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<input type="hidden" id="baseurl" value=""/>
+<script src="/res/js/jquery.js"></script>
+<script src="/res/js/jquery.easing.1.3.js"></script>
+<script src="/res/js/bootstrap.min.js"></script>
+<script src="/res/js/jquery.fancybox.pack.js"></script>
+<script src="/res/js/jquery.fancybox-media.js"></script>
+<script src="/res/js/google-code-prettify/prettify.js"></script>
+<script src="/res/js/portfolio/jquery.quicksand.js"></script>
+<script src="/res/js/portfolio/setting.js"></script>
+<script src="/res/js/jquery.flexslider.js"></script>
+<script src="/res/js/animate.js"></script>
+<script src="/res/js/custom.js"></script>
+<script src="/res/js/js-ku.js"></script>
+<script src="/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
+	<script>
+	$(document).ready(function() {
+	    $.getJSON("/res/authors/authors.json",
+		    function(data) {
+		      $.each(data,
+			      function(i, item) {
+			        var content = '<div class="flickr_badge_image"><img src="'+$("#baseurl").val()+'/'+item.img_url+'" alt="'+item.title+'" title="'+item.title+'"> </div>';
+			        $("#authors_div").append(content);
+			      });
+		    });
+	  	});
+		/*百度统计*/
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?d71753d88b8facfc31e2ef23e6a4f540";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+</body>
+</html>

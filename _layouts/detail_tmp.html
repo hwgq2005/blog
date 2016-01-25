@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{page.title}} - js开发库</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="{{page.intro}}">
+<meta name="keywords" content="{{page.keyword}}">
+<meta name="author" content="{{page.author}}">
+{% include css.html%}
+
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+	{% include header.html%}
+	<!-- end header -->
+	<section id="content">
+	<div class="container">
+ 		{{content}}
+	</div>
+	</section>
+	 {% include footer.html%}
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+{% include script.html%}
+</body>
+</html>

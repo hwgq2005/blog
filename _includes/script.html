@@ -1,0 +1,34 @@
+<input type="hidden" id="baseurl" value="{{ site.baseurl }}"/>
+<script src="{{ site.baseurl }}/res/js/jquery.js"></script>
+<script src="{{ site.baseurl }}/res/js/jquery.easing.1.3.js"></script>
+<script src="{{ site.baseurl }}/res/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/res/js/jquery.fancybox.pack.js"></script>
+<script src="{{ site.baseurl }}/res/js/jquery.fancybox-media.js"></script>
+<script src="{{ site.baseurl }}/res/js/google-code-prettify/prettify.js"></script>
+<script src="{{ site.baseurl }}/res/js/portfolio/jquery.quicksand.js"></script>
+<script src="{{ site.baseurl }}/res/js/portfolio/setting.js"></script>
+<script src="{{ site.baseurl }}/res/js/jquery.flexslider.js"></script>
+<script src="{{ site.baseurl }}/res/js/animate.js"></script>
+<script src="{{ site.baseurl }}/res/js/custom.js"></script>
+<script src="{{ site.baseurl }}/res/js/js-ku.js"></script>
+<script src="{{ site.baseurl }}/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
+	<script>
+	$(document).ready(function() {
+	    $.getJSON("/res/authors/authors.json",
+		    function(data) {
+		      $.each(data,
+			      function(i, item) {
+			        var content = '<div class="flickr_badge_image"><img src="'+$("#baseurl").val()+'/'+item.img_url+'" alt="'+item.title+'" title="'+item.title+'"> </div>';
+			        $("#authors_div").append(content);
+			      });
+		    });
+	  	});
+		/*百度统计*/
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?d71753d88b8facfc31e2ef23e6a4f540";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>

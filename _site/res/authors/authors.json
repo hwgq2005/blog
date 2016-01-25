@@ -1,0 +1,14 @@
+[
+    {
+        "title":"li",
+        "img_url":"res/authors/li.jpg"
+    },
+ 	{
+        "title":"EthanOrange",
+        "img_url":"res/authors/sanlang.png"
+    },
+    {
+        "title":"H君",
+        "img_url":"res/authors/hjun.jpg"
+    }
+]

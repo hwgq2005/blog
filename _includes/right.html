@@ -1,0 +1,47 @@
+			<div class="col-lg-4">
+				<aside class="right-sidebar">
+				<div class="widget">
+					<form class="form-search">
+						<input class="form-control" type="text" placeholder="Search..">
+					</form>
+				</div>
+				<div class="widget">
+					<h5 class="widgetheading">Categories</h5>
+					<ul class="cat">
+						<li><i class="icon-angle-right"></i><a href="#">Web design</a><span> (20)</span></li>
+						<li><i class="icon-angle-right"></i><a href="#">Online business</a><span> (11)</span></li>
+						<li><i class="icon-angle-right"></i><a href="#">Marketing strategy</a><span> (9)</span></li>
+						<li><i class="icon-angle-right"></i><a href="#">Technology</a><span> (12)</span></li>
+						<li><i class="icon-angle-right"></i><a href="#">About finance</a><span> (18)</span></li>
+					</ul>
+				</div>
+				<div class="widget">
+					<h5 class="widgetheading">开发帮助</h5>
+					<ul class="recent">
+						<li>
+						<a href="{{ site.baseurl }}/test/md-test.html" target="_blank"><img src="{{ site.baseurl }}/res/img/slides/1.jpg" class="pull-left" alt="js开发库" />
+						<h6><a href="{{ site.baseurl }}/test/md-test.html" target="_blank">协同合作，开发文档。</a></h6>
+						<p>
+							 js-ku 开源网站项目。
+						</p>
+						</li>
+						<li>
+						<a href="{{ site.baseurl }}/front-end/development/github.html" target="_blank"><img src="{{ site.baseurl }}/res/img/slides/3.jpg" class="pull-left" alt="github 使用教程" /></a>
+						<h6><a href="{{ site.baseurl }}/front-end/development/github.html" target="_blank">git本地如何上传项目github。</a></h6>
+						<p>
+							 github 使用教程
+						</p>
+						</li>
+					</ul>
+				</div>
+				<div class="widget">
+					<h5 class="widgetheading">Popular tags</h5>
+					<ul class="tags">
+						{% for tag in site.tags %}
+						<li><a href="javascript:void(0)">{{tag[0]}}</a></li>
+						{% endfor %}
+						
+					</ul>
+				</div>
+				</aside>
+			</div>
