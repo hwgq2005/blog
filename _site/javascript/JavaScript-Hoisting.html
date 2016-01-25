@@ -2,23 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JavaScript 声明提升 - js开发库</title>
+<title>JavaScript 声明提升 - H君</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="JavaScript 声明提升(hoisting) 很容易忽略从而造成Bug">
 <meta name="keywords" content="JavaScript变量提升,JavaScript函数提升,JavaScript常见问题">
 <meta name="author" content="li">
 <link href="/res/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/res/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="/res/css/jcarousel.css" rel="stylesheet" />
 <link href="/res/css/flexslider.css" rel="stylesheet" />
 <link href="/res/css/style.css" rel="stylesheet" />
-<!-- Theme skin -->
 <link href="/res/skins/default.css" rel="stylesheet" />
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
+<link href="/res/js/google-code-prettify/tomorrow-night.css" rel="stylesheet" />
 
 
 </head>
@@ -34,7 +28,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=""><span>JS</span>开发库</a>
+                    <a class="navbar-brand" href=""><span>H君</span>的日志</a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
@@ -57,6 +51,7 @@
 	</header>
 
 	<!-- end header -->
+
 	<section id="content">
 	<div class="container">
  		<h1 id="javascript-">JavaScript 变量提升</h1>
@@ -76,46 +71,49 @@
 
 <p>先看一段代码</p>
 
-<pre><code>var v = 'hoisting';
+<div class="highlighter-rouge"><pre class="highlight"><code>var v = 'hoisting';
 function test_hoisting(){
 	console.log(v);
 	var v = 'hoisted';
 }
 </code></pre>
+</div>
 
-<p>结果是什么呢：<code>undefined</code>.
-因为 <code>声明提升</code>的原因 以上代码 和下面的代码 同理。</p>
+<p>结果是什么呢：<code class="highlighter-rouge">undefined</code>.
+因为 <code class="highlighter-rouge">声明提升</code>的原因 以上代码 和下面的代码 同理。</p>
 
-<pre><code>var v = 'hoisting';
+<div class="highlighter-rouge"><pre class="highlight"><code>var v = 'hoisting';
 function test_hoisting(){
 	var v;
 	console.log(v);
 	v = 'hoisted';
 }
 </code></pre>
+</div>
 
-<p>function作用域里的变量 遮盖了上层作用域变量，声明又被提升 所以就会出现<code>undefined</code></p>
+<p>function作用域里的变量 遮盖了上层作用域变量，声明又被提升 所以就会出现<code class="highlighter-rouge">undefined</code></p>
 
 <blockquote>
-  <p><code>声明提升</code>:是JavaScript 所有声明默认的行为（包括<code>function</code>） 提升的范围就是当前作用域的顶部。
+  <p><code class="highlighter-rouge">声明提升</code>:是JavaScript 所有声明默认的行为（包括<code class="highlighter-rouge">function</code>） 提升的范围就是当前作用域的顶部。
  JavaScript 只是提升声明，并不提升初始化。</p>
 </blockquote>
 
 <p>再看下面的代码：</p>
 
-<pre><code>var test_hoisting2 = 3;
+<div class="highlighter-rouge"><pre class="highlight"><code>var test_hoisting2 = 3;
 
 function test_hoisting2(){
 
 }
 console.log(typeof test_hoisting2);
 </code></pre>
+</div>
 
-<p>结果是 <code>number</code>为什么？</p>
+<p>结果是 <code class="highlighter-rouge">number</code>为什么？</p>
 
-<p>之前说过<code>function</code> 也会提升。由于在 <code>JavaScript</code>中 <code>function</code>是一等公民，<code>function</code> 会先提升. 
+<p>之前说过<code class="highlighter-rouge">function</code> 也会提升。由于在 <code class="highlighter-rouge">JavaScript</code>中 <code class="highlighter-rouge">function</code>是一等公民，<code class="highlighter-rouge">function</code> 会先提升. 
 <strong>函数的声明 比 变量的声明 具有高的优先级。</strong> 
-所以 <code>function test_hoisting2</code> 优先提升，被 <code>var test_hoisting2</code>覆盖。</p>
+所以 <code class="highlighter-rouge">function test_hoisting2</code> 优先提升，被 <code class="highlighter-rouge">var test_hoisting2</code>覆盖。</p>
 
 <blockquote>
   <p>关于变量提升的问题都大同小异，在实际开发中要避免这个特性，把变量定义在顶部。就会避免出现不必要的问题。</p>
@@ -123,20 +121,21 @@ console.log(typeof test_hoisting2);
 
 <p>在 Chrome 里有个奇怪的问题：</p>
 
-<pre><code>console.log(typeof name);
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log(typeof name);
 var name = "Chrome";
 console.log(typeof name); 
 </code></pre>
+</div>
 
-<p>经过上面示例，我们期待的结果是 <code>undefined</code> <code>string</code>. 但是结果却都是 <code>string</code>.如果我们再试一次，将<code>name</code>换成 其他的 <code>name2</code> 就是我们预期的结果了.原因是 
+<p>经过上面示例，我们期待的结果是 <code class="highlighter-rouge">undefined</code> <code class="highlighter-rouge">string</code>. 但是结果却都是 <code class="highlighter-rouge">string</code>.如果我们再试一次，将<code class="highlighter-rouge">name</code>换成 其他的 <code class="highlighter-rouge">name2</code> 就是我们预期的结果了.原因是 
 <strong>Chrome</strong>
-可能初始化 <code>name</code> 导致我们使用时，已经声明完成，所以就是<code>string</code>了</p>
+可能初始化 <code class="highlighter-rouge">name</code> 导致我们使用时，已经声明完成，所以就是<code class="highlighter-rouge">string</code>了</p>
 
 <hr />
 
 <h3 id="section">2. 关于函数提升</h3>
 
-<pre><code>console.log(typeof foo);
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log(typeof foo);
 console.log(typeof bar);
 console.log(typeof add);
 //函数的声明
@@ -152,16 +151,17 @@ var add = function(a,b){
 return a+b;
 };
 </code></pre>
+</div>
 
-<p>结果是<code>function</code> <code>undefined</code> <code>undefined</code> 因为 <code>foo()</code>是根据<code>function</code>提升的。
-<code>foo()</code>被提升到了顶部且能正常运行，而bar()的定义并没有得到提升，
+<p>结果是<code class="highlighter-rouge">function</code> <code class="highlighter-rouge">undefined</code> <code class="highlighter-rouge">undefined</code> 因为 <code class="highlighter-rouge">foo()</code>是根据<code class="highlighter-rouge">function</code>提升的。
+<code class="highlighter-rouge">foo()</code>被提升到了顶部且能正常运行，而bar()的定义并没有得到提升，
 仅有它的声明被提升，所以，当执行bar()的时候显示结果为undefined而不是作为函数来使用。</p>
 
 <hr />
 
-<p>一个方法总结声明<code>提升</code></p>
+<p>一个方法总结声明<code class="highlighter-rouge">提升</code></p>
 
-<pre><code>var global = 'global';
+<div class="highlighter-rouge"><pre class="highlight"><code>var global = 'global';
 function foo(){alert(global);}
 
 function hoist(){
@@ -185,34 +185,29 @@ function hoist(){
 
 hoist(); 
 </code></pre>
+</div>
 
 	</div>
 	</section>
+	
 	 <footer>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3">
 				<div class="widget">
 					<h5 class="widgetheading">联系我们</h5>
-					<address>
-					<strong>JS开发库</strong><br>
-					 由一群热爱技术的年轻人创建。<br>
-					  </address>
+					
 					<p>
 						<i class="icon-phone"></i> QQ群 364778978 <br>
-						<i class="icon-envelope-alt"></i> service@js-ku.com
 					</p>
 				</div>
 			</div>
 			<div class="col-lg-3">
 				<div class="widget">
-					<h5 class="widgetheading">Pages</h5>
+					<h5 class="widgetheading">推荐</h5>
 					<ul class="link-list">
-						<li><a href="#">Press release</a></li>
-						<li><a href="#">Terms and conditions</a></li>
-						<li><a href="#">Privacy policy</a></li>
-						<li><a href="#">Career center</a></li>
-						<li><a href="#">Contact us</a></li>
+						<li><a href="#">协同合作，开发文档。</a></li>
+						
 					</ul>
 				</div>
 			</div>
@@ -220,9 +215,7 @@ hoist();
 				<div class="widget">
 					<h5 class="widgetheading">友情链接</h5>
 					<ul class="link-list">
-						<li><a href="http://j-ui.com" target="_blank">富客户端框架-jUI</a></li>
-						<li><a href="http://www.qeo.cn/31/" target="_blank">网络工程师培训</a></li>
-						<li><a href="http://www.lingjianfeng.com/" target="_blank">Cocos2d-JS 教程</a></li>
+						<li><a href="https://github.com/hwgq2005/hbook" target="_blank">Hbook</a></li>
 					</ul>
 				</div>
 			</div>
@@ -238,7 +231,7 @@ hoist();
 			</div> -->
 			<div class="col-lg-3">
 				<div class="widget">
-					<h5 class="widgetheading">Collaborators</h5>
+					<h5 class="widgetheading">Author</h5>
 						<div class="flickr_badge" id="authors_div">
 							
 					   
@@ -256,14 +249,14 @@ hoist();
 				<div class="col-lg-6">
 					<div class="copyright">
 						<p>
-							<span>&copy; Js-ku 2014 All right reserved. By </span><a href="https://github.com/Da-Li/js-ku" target="_blank">GitHub</a>
+							<span>&copy; Blog 2014 All right reserved. By </span><a href="https://github.com/hwgq2005/blog" target="_blank">GitHub</a>
 						</p>
 					</div>
 				</div>
 				 <div class="col-lg-6">
 					<ul class="social-network">
-						<li><a href="https://github.com/Da-Li/js-ku" target="_blank" data-placement="top" title="GitHub"><i class="fa fa-github"></i></a></li>
-<!-- 						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://github.com/hwgq2005/blog" target="_blank" data-placement="top" title="GitHub"><i class="fa fa-github"></i></a></li>
+				<!-- 		<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
 						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li> -->
@@ -274,11 +267,10 @@ hoist();
 	</div>
 	</footer>
 
+
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
+
 <input type="hidden" id="baseurl" value=""/>
 <script src="/res/js/jquery.js"></script>
 <script src="/res/js/jquery.easing.1.3.js"></script>
@@ -291,7 +283,6 @@ hoist();
 <script src="/res/js/jquery.flexslider.js"></script>
 <script src="/res/js/animate.js"></script>
 <script src="/res/js/custom.js"></script>
-<script src="/res/js/js-ku.js"></script>
 <script src="/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
 	<script>
 	$(document).ready(function() {
@@ -304,14 +295,6 @@ hoist();
 			      });
 		    });
 	  	});
-		/*百度统计*/
-		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "//hm.baidu.com/hm.js?d71753d88b8facfc31e2ef23e6a4f540";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
-		})();
 	</script>
 
 </body>

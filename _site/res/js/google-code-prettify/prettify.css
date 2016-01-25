@@ -1,26 +1,26 @@
 /* Tomorrow Night Theme */
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 .prettyprint {
-    background: #1d1f21;
-    font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
-    font-size: 16px;
-    line-height: 1.5;
-    border: 1px solid #ccc;
-    padding: 10px 30px;
-    color: #ccc;
+  background: #1d1f21;
+  font-family: Menlo, 'Bitstream Vera Sans Mono', 'DejaVu Sans Mono', Monaco, Consolas, monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  padding: 10px 30px;
+  color: #ccc;
 }
 
 .pln {
-  color: #FFF;
+  color: #2AC15C;
 }
 
 @media screen {
   .str {
-    color: #E7EA78;
+    color: #EBF108;
   }
 
   .kwd {
-    color: #DD8FF5;
+    color: #EC3D64;
   }
 
   .com {

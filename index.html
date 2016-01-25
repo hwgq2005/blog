@@ -7,7 +7,7 @@ layout: index_temp
 
 						<div class="post-image">
 							<div class="post-heading">
-								<h3><a target="_blank" href="{{site.baseurl}}{{ post.url }}">{{post.title}}</a></h3>
+								<h3><a  href="{{site.baseurl}}{{ post.url }}">{{post.title}}</a></h3>
 							</div>
 							<img src="{{site.baseurl}}{{post.show_intro}}" alt="{{post.show_intro}}" />
 						</div>
@@ -16,7 +16,7 @@ layout: index_temp
 						
 						<div class="post-slider">
 							<div class="post-heading">
-								<h3><a target="_blank" href="{{site.baseurl}}{{ post.url }}">{{post.title}}</a></h3>
+								<h3><a  href="{{site.baseurl}}{{ post.url }}">{{post.title}}</a></h3>
 							</div>
 							<!-- start flexslider -->
 							<div id="post-slider" class="flexslider">
@@ -34,7 +34,7 @@ layout: index_temp
 						{% elsif post.show_type == "video" %}
 						<div class="post-video">
 							<div class="post-heading">
-								<h3><a  target="_blank" href="{{site.baseurl}}{{ post.url }}">{{post.title}}</a></h3>
+								<h3><a   href="{{site.baseurl}}{{ post.url }}">{{post.title}}</a></h3>
 							</div>
 							<div class="video-container">
 								<iframe src="{{post.show_intro}}"></iframe>
@@ -60,16 +60,16 @@ layout: index_temp
 								<!-- <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
 								<li><i class="icon-comments"></i><a href="#">4 Comments</a></li> -->
 							</ul>
-							<a href="{{site.baseurl}}{{ post.url }}" target="_blank" class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
+							<a href="{{site.baseurl}}{{ post.url }}"  class="pull-right">Continue reading <i class="icon-angle-right"></i></a>
 						</div>
 				</article>
 				 {% endfor %}
-<!-- 			<div id="pagination">
+			<div id="pagination">
 					<span class="all">Page {{paginator.page}} of {{paginator.total_posts}}</span>
 					<span class="current">1</span>
 					<a href="#" class="inactive">2</a>
 					<a href="#" class="inactive">3</a>
 				</div>
- -->
+
 
 			

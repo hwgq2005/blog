@@ -1648,7 +1648,7 @@ section.demogrid .col-lg-12.nest {
     position:fixed;
 	width:32px;
 	height:32px;
-    bottom:0px;
+    bottom:20px;
     right:20px;
 	background: #222;
 	
