@@ -11,16 +11,16 @@
 }
 
 .pln {
-  color: #c5c8c6;
+  color: #2AC15C;
 }
 
 @media screen {
   .str {
-    color: #b5bd68;
+    color: #EBF108;
   }
 
   .kwd {
-    color: #b294bb;
+    color: #EC3D64;
   }
 
   .com {
