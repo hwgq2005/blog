@@ -1,6 +1,6 @@
 encoding: utf-8
 
-# baseurl : ''
+# baseurl : 
 baseurl : http://hwgq2005.github.io/blog
 permalink : /:categories/:title.html
 markdown: kramdown
