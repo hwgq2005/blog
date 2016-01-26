@@ -1,8 +1,8 @@
 encoding: utf-8
 
 baseurl : ''
-baseurl : http://hwgq2005.github.io/blog
-# permalink : /:categories/:title.html
+# baseurl : http://hwgq2005.github.io/blog
+permalink : /:categories/:title.html
 markdown: kramdown
 # paginate: 5
 # paginate_path: "page:num"
@@ -10,6 +10,6 @@ markdown: kramdown
 
 ##首页头部信息
 indet_title: H君的日志
-index_keyword: 开源网站,共同开发,javaScritp 教程,java 教程,ruby 教程,python 教程,html5 教程,css3 教程,web app 教程
-index_description: 做人低调、做事高调
+index_keyword: 开源网站,共同开发,javaScritp 教程,html5 教程,css3 教程,webapp 教程
+index_description: 低调做人、高调做事
 index_author: https://github.com/hwgq2005/blog.git

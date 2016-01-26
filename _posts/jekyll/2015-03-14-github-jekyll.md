@@ -2,9 +2,9 @@
 layout: detail_tmp
 title: Jekyll 安装教程
 intro: Jekyll 安装教程
-categories: test
-keyword: js-ku协作开发，github 教程，jekyll教程
-author: li
+categories: jekyll
+keyword: 协作开发，github 教程，jekyll教程
+author: H君
 show_type: image
 show_intro: /res/img/page/test/open-source.png
 tags: [jekyll]
