@@ -4,7 +4,7 @@ layout: index_temp
 	 {% for post in site.posts %}
 				<article>
 						{% if post.show_type == "image" %}
-
+						
 						<div class="post-image">
 							<div class="post-heading">
 								<h3><a  href="{{site.baseurl}}{{ post.url }}">{{post.title}}</a></h3>
@@ -26,7 +26,7 @@ layout: index_temp
 										<li>
 										<img src="{{site.baseurl}}{{word}}" alt="{{post.intro}}" />
 										</li>
-										
+
 									{% endfor %}
 								</ul>
 							</div>

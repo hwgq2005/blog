@@ -10,7 +10,7 @@ show_intro: /res/img/page/test/open-source.png
 tags: [jekyll]
 ---
 
-# js-ku协作开发文档
+# 协作开发文档
 
 --- 
 
