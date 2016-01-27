@@ -16,7 +16,7 @@ tags: [jekyll]
 
 ## GitHub 与 Jekyll
 
-![jekyll和github教程](/res/img/page/jekyll/open-source.png) 
+![jekyll和github教程](../res/img/page/jekyll/open-source.png) 
 
 
 
