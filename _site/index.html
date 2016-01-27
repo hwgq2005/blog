@@ -128,7 +128,7 @@
 							<div class="post-heading">
 								<h3><a  href="/github/github.html">git上传本地文件到github</a></h3>
 							</div>
-							<img src="/res/img/page/github/github.png" alt="/res/img/page/github/github.png" />
+							<img src="/res/img/slides/3.jpg" alt="/res/img/slides/3.jpg" />
 						</div>
  						
 						
@@ -183,12 +183,27 @@
 						</div>
 				</article>
 				 
-			<!-- <div id="pagination">
-					<span class="all">Page  of </span>
-					<span class="current">1</span>
-					<a href="#" class="inactive">2</a>
-					<a href="#" class="inactive">3</a>
-				</div> -->
+				<nav>
+				  <ul class="pagination">
+					
+					    <li class="disabled">
+							<a href="javascript:;">«</a>
+						</li>
+					
+					
+					    
+					    	<li class="active"><span class="current">1</span></li>
+					    
+					
+				    
+					    <li class="disabled">
+							<a href="javascript:;">«</a>
+						</li>
+					
+				  </ul>
+				</nav>
+			
+				
 
 
 			
@@ -215,14 +230,14 @@
 					<ul class="recent">
 						<li>
 						<a href="/jekyll/md-test.html" target="_blank"><img src="/res/img/slides/1.jpg" class="pull-left" alt="js开发库" />
-						<h6><a href="/test/md-test.html" target="_blank">协同合作，开发文档。</a></h6>
+						<h6><a href="/jekyll/md-test.html" target="_blank">协同合作，开发文档</a></h6>
 						<p>
-							 js-ku 开源网站项目。
+							 开源网站项目
 						</p>
 						</li>
 						<li>
-						<a href="/front-end/development/github.html" target="_blank"><img src="/res/img/slides/3.jpg" class="pull-left" alt="github 使用教程" /></a>
-						<h6><a href="/front-end/development/github.html" target="_blank">git本地如何上传项目github。</a></h6>
+						<a href="/github/github.html" target="_blank"><img src="/res/img/slides/3.jpg" class="pull-left" alt="github 使用教程" /></a>
+						<h6><a href="/github/github.html" target="_blank">git上传本地文件到github</a></h6>
 						<p>
 							 github 使用教程
 						</p>
@@ -348,7 +363,7 @@
 <script src="/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
 	<script>
 	$(document).ready(function() {
-	    $.getJSON("res/authors/authors.json",
+	    $.getJSON("/res/authors/authors.json",
 		    function(data) {
 		      $.each(data,
 			      function(i, item) {

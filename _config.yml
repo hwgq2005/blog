@@ -4,9 +4,11 @@ encoding: utf-8
 baseurl : http://hwgq2005.github.io/blog
 permalink : /:categories/:title.html
 markdown: kramdown
-# paginate: 5
+gems: [jekyll-paginate]
+paginate: 5
+paginate_path: "page:num"
 # paginate_path: "page:num"
-# paginate_path: "page:num"
+
 
 ##首页头部信息
 indet_title: H君的日志

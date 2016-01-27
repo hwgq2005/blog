@@ -1,7 +1,7 @@
 ---
 layout: index_temp
 ---
-	 {% for post in site.posts %}
+	 {% for post in paginator.posts %}
 				<article>
 						{% if post.show_type == "image" %}
 						
@@ -21,12 +21,11 @@ layout: index_temp
 							<!-- start flexslider -->
 							<div id="post-slider" class="flexslider">
 								<ul class="slides">
-									{% assign words = post.show_intro | split:';' %}
+									{% assign words = post.show_intro | split:',' %}
   									{% for word in words %}
 										<li>
 										<img src="{{site.baseurl}}{{word}}" alt="{{post.intro}}" />
 										</li>
-
 									{% endfor %}
 								</ul>
 							</div>
@@ -65,12 +64,41 @@ layout: index_temp
 						</div>
 				</article>
 				 {% endfor %}
-			<!-- <div id="pagination">
-					<span class="all">Page {{paginator.page}} of {{paginator.total_posts}}</span>
-					<span class="current">1</span>
-					<a href="#" class="inactive">2</a>
-					<a href="#" class="inactive">3</a>
-				</div> -->
+				<nav>
+				  <ul class="pagination">
+					{% if paginator.previous_page %}
+						<li >
+							<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">«</a>
+						</li>
+					{% else %}
+					    <li class="disabled">
+							<a href="javascript:;">«</a>
+						</li>
+					{% endif %}
+					{% for page in (1..paginator.total_pages) %}
+					    {% if page == paginator.page %}
+					    	<li class="active"><span class="current">{{ page }}</span></li>
+					    {% elsif page == 1 %}
+					    	<li > <a href="/index.html">{{ page }}</a></li>
+					    {% else %}
+					    	<li > 
+					    	<a href="/page{{page}}">{{ page }}</a>
+					    	</li>
+					    {% endif %}
+					{% endfor %}
+				    {% if paginator.next_page %}
+						<li >
+							<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">»</a>
+						</li>
+					{% else %}
+					    <li class="disabled">
+							<a href="javascript:;">«</a>
+						</li>
+					{% endif %}
+				  </ul>
+				</nav>
+			
+				
 
 
 			
