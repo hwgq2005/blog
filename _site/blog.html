@@ -195,8 +195,8 @@
 							<div class="col-lg-4">
 				<aside class="right-sidebar">
 				<div class="widget">
-					<form class="form-search">
-						<input class="form-control" type="text" placeholder="Search..">
+					<form class="form-search" action="search.html">
+						<input class="form-control " type="text"  id="search-query" name="q" placeholder="Search" autocomplete="off">
 					</form>
 				</div>
 				<div class="widget">
@@ -304,7 +304,7 @@
 					<h5 class="widgetheading">作者</h5>
 					
 						<div class="flickr_badge" >
-							<img src="/res/authors/hjun.jpg" alt="H君" title="H君">
+							<img src="/res/authors/hjun.jpg" alt="H君" title="">
 						</div>
 					
 					
@@ -345,7 +345,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <input type="hidden" id="baseurl" value=""/>
 <script src="/res/js/jquery.js"></script>
-<script src="/res/js/jquery.easing.1.3.js"></script>
+<!-- <script src="/res/js/jquery.easing.1.3.js"></script> -->
 <script src="/res/js/bootstrap.min.js"></script>
 <script src="/res/js/jquery.fancybox.pack.js"></script>
 <script src="/res/js/jquery.fancybox-media.js"></script>
@@ -356,18 +356,50 @@
 <script src="/res/js/animate.js"></script>
 <script src="/res/js/custom.js"></script>
 <script src="/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
-	<script>
-	// $(document).ready(function() {
-	//     $.getJSON("res/authors/authors.json",
-	// 	    function(data) {
-	// 	      $.each(data,
-	// 		      function(i, item) {
-	// 		        var content = '<div class="flickr_badge_image"><img src="'+$("#baseurl").val()+'/'+item.img_url+'" alt="'+item.title+'" title="'+item.title+'"> </div>';
-	// 		        $("#authors_div").append(content);
-	// 		      });
-	// 	    });
-	//   	});
-	// </script>
+<script src="/res/js/lunr-js-search/build/lunr.min.js"></script>
+<!-- <script src="/res/js/mustache.js"></script>
+<script src="/res/js/lunr-js-search/build/search.js"></script> -->
 
+<script id="search-results-template" type="text/mustache">
+  
+    <article>
+      <h3>
+        <small><time datetime="" pubdate></time></small>
+        <a href=""></a>
+      </h3>
+    </article>
+  
+</script>
+<script>
+	$(function(){
+		 var index = lunr(function () {
+		    this.field('title', {boost: 10})
+		    this.field('title')
+		    this.ref('id')
+		  })
+
+		  index.add({
+		    id: 5,
+		    title: 'Foo',
+		    body: 'Foo foo foo!'
+		  })
+
+		  index.add({
+		    id: 1,
+		    title: 'Bar',
+		    body: 'Bar baor bar!'
+		  })
+
+		console.log(index.search('ar'))
+
+	 //   	$('#search-query').lunrSearch({
+		//       indexUrl: 'search.json',             // URL of the `search.json` index data for your site
+		//       results:  '#search-results',          // jQuery selector for the search results container
+		//       entries:  '.entries',                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
+		//       template: '#search-results-template'  // jQuery selector for the Mustache.js template
+		// });
+		  
+	})
+</script>
 </body>
 </html>
