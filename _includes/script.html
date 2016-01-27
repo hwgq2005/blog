@@ -12,14 +12,14 @@
 <script src="{{ site.baseurl }}/res/js/custom.js"></script>
 <script src="{{ site.baseurl }}/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
 	<script>
-	$(document).ready(function() {
-	    $.getJSON("res/authors/authors.json",
-		    function(data) {
-		      $.each(data,
-			      function(i, item) {
-			        var content = '<div class="flickr_badge_image"><img src="'+$("#baseurl").val()+'/'+item.img_url+'" alt="'+item.title+'" title="'+item.title+'"> </div>';
-			        $("#authors_div").append(content);
-			      });
-		    });
-	  	});
-	</script>
+	// $(document).ready(function() {
+	//     $.getJSON("res/authors/authors.json",
+	// 	    function(data) {
+	// 	      $.each(data,
+	// 		      function(i, item) {
+	// 		        var content = '<div class="flickr_badge_image"><img src="'+$("#baseurl").val()+'/'+item.img_url+'" alt="'+item.title+'" title="'+item.title+'"> </div>';
+	// 		        $("#authors_div").append(content);
+	// 		      });
+	// 	    });
+	//   	});
+	// </script>

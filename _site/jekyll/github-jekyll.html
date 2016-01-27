@@ -96,7 +96,7 @@
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"hwgq2005"};
+	var duoshuoQuery = {short_name:"hwgq2005"};
 	(function() {
 		var ds = document.createElement('script');
 		ds.type = 'text/javascript';ds.async = true;
@@ -105,7 +105,7 @@ var duoshuoQuery = {short_name:"hwgq2005"};
 		(document.getElementsByTagName('head')[0] 
 		 || document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
-	</script>
+</script>
 <!-- 多说公共JS代码 end -->
 			</div>
 		</div>
@@ -139,26 +139,17 @@ var duoshuoQuery = {short_name:"hwgq2005"};
 					</ul>
 				</div>
 			</div>
-<!-- 			<div class="col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Flickr photostream</h5>
-					<div class="flickr_badge">
-						<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-					</div>
-					<div class="clear">
-					</div>
-				</div>
-			</div> -->
+
 			<div class="col-lg-3">
 				<div class="widget">
-					<h5 class="widgetheading">Author</h5>
-						<div class="flickr_badge" id="authors_div">
-							
-					   
-					    
-					</div>
-					<div class="clear">
-					</div>
+					<h5 class="widgetheading">作者</h5>
+					
+						<div class="flickr_badge" >
+							<img src="/res/authors/hjun.jpg" alt="H君" title="H君">
+						</div>
+					
+					
+					<div class="clear"></div>
 				</div>
 			</div>
 		</div>
@@ -176,7 +167,7 @@ var duoshuoQuery = {short_name:"hwgq2005"};
 				 <div class="col-lg-6">
 					<ul class="social-network">
 						<li><a href="https://github.com/hwgq2005/blog" target="_blank" data-placement="top" title="GitHub"><i class="fa fa-github"></i></a></li>
-				<!-- 		<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+					<!-- 	<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
 						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li> -->
@@ -205,17 +196,17 @@ var duoshuoQuery = {short_name:"hwgq2005"};
 <script src="/res/js/custom.js"></script>
 <script src="/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
 	<script>
-	$(document).ready(function() {
-	    $.getJSON("res/authors/authors.json",
-		    function(data) {
-		      $.each(data,
-			      function(i, item) {
-			        var content = '<div class="flickr_badge_image"><img src="'+$("#baseurl").val()+'/'+item.img_url+'" alt="'+item.title+'" title="'+item.title+'"> </div>';
-			        $("#authors_div").append(content);
-			      });
-		    });
-	  	});
-	</script>
+	// $(document).ready(function() {
+	//     $.getJSON("res/authors/authors.json",
+	// 	    function(data) {
+	// 	      $.each(data,
+	// 		      function(i, item) {
+	// 		        var content = '<div class="flickr_badge_image"><img src="'+$("#baseurl").val()+'/'+item.img_url+'" alt="'+item.title+'" title="'+item.title+'"> </div>';
+	// 		        $("#authors_div").append(content);
+	// 		      });
+	// 	    });
+	//   	});
+	// </script>
 
 
 </body>

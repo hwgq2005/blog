@@ -1,6 +1,7 @@
-# js-ku
-[js-ku](http://www.js-ku.com) 
-#需要遵守的[约定](http://js-ku.com/test/md-test.html) 
+# 开发文档
+
+#需要遵守的[约定](http://hwgq2005.github.io/blog/jekyll/md-test.html) 
+
 1.提交各自文件`xxx.md`到 *_posts* 文件夹下。 
 
 2.`xxx.md` 的命名规范 `2015-03-12-title.md`
