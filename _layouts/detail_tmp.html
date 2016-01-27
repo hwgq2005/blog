@@ -8,25 +8,25 @@
 <meta name="keywords" content="{{page.keyword}}">
 <meta name="author" content="{{page.author}}">
 {% include css.html%}
-
 </head>
 <body>
 <div id="wrapper">
-	<!-- start header -->
-	{% include header.html%}
-	<!-- end header -->
 
+	{% include header.html%}
 	<section id="content">
-	<div class="container">
- 		{{content}}
-	</div>
+		<div class="container">
+	 		{{content}}
+	 		<div class="row">
+	 			{% include duoshuo.html%}
+			</div>
+		</div>
 	</section>
-	
-	 {% include footer.html%}
+	{% include footer.html%}
 
 </div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 {% include script.html%}
+
 </body>
 </html>
