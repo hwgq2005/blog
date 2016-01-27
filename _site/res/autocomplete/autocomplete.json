@@ -2,12 +2,6 @@
     
 
     {
-        "title":,
-        "img_url":"res/authors/li.jpg"
-    },
-     
-
-    {
         "title":JavaScript 声明提升,
         "img_url":"res/authors/li.jpg"
     },
@@ -15,6 +9,12 @@
 
     {
         "title":Jekyll 安装教程,
+        "img_url":"res/authors/li.jpg"
+    },
+     
+
+    {
+        "title":git上传本地文件到github,
         "img_url":"res/authors/li.jpg"
     },
      
