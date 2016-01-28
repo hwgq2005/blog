@@ -7,7 +7,7 @@
 <meta name="description" content="{{site.indet_title}}" />
 <meta name="keywords" content="{{site.index_keywords}}">
 <meta name="author" content="{{site.index_author}}" />
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="{{site.baseurl}}/favicon.ico">
 {% include css.html%}
 
 </head>
@@ -42,7 +42,7 @@
 		var post = {
 			  "list":[{% for post in site.posts  %}{
 			    	"title":"{{post.title}}",
-			        "url":"{{site.url}}{{post.url}}",
+			        "url":"{{site.baseurl}}{{site.url}}{{post.url}}",
 			        "date":"{{ post.date | date: "%Y-%m-%d" }}",
 			        "author":"{{post.author}}",
 			        "summary":"{{post.intro}}",
