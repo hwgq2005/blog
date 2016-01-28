@@ -33,7 +33,7 @@
 					<h5 class="widgetheading">作者</h5>
 					{% for author in site.data.author %}
 						<div class="flickr_badge" >
-							<img src="{{author.avatar}}" alt="{{author.author}}" title="{{author.autho}}">
+							<img src="{{site.baseurl}}{{author.avatar}}" alt="{{author.author}}" title="{{author.autho}}">
 						</div>
 					{% endfor %}
 					
