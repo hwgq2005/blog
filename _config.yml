@@ -5,7 +5,7 @@ baseurl : http://hwgq2005.github.io/blog
 permalink : /:categories/:title.html
 markdown: kramdown
 gems: [jekyll-paginate]
-paginate: 2
+paginate: 3
 paginate_path: "page:num"
 # paginate_path: "page:num"
 
