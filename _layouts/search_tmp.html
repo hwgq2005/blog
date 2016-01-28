@@ -41,7 +41,7 @@
 
 		var post = {
 			  "list":[{% for post in site.posts  %}{
-			    "title":"{{post.title}}",
+			    	"title":"{{post.title}}",
 			        "url":"{{site.url}}{{post.url}}",
 			        "date":"{{ post.date | date: "%Y-%m-%d" }}",
 			        "author":"{{post.author}}",
