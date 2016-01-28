@@ -76,10 +76,10 @@ layout: index_temp
 					    {% if page == paginator.page %}
 					    	<li class="active"><span class="current">{{ page }}</span></li>
 					    {% elsif page == 1 %}
-					    	<li > <a href="/index.html">{{ page }}</a></li>
+					    	<li > <a href="{{site.baseurl}}/index.html">{{ page }}</a></li>
 					    {% else %}
 					    	<li > 
-					    	<a href="page{{page}}">{{ page }}</a>
+					    	<a href="{{site.baseurl}}page{{page}}">{{ page }}</a>
 					    	</li>
 					    {% endif %}
 					{% endfor %}
