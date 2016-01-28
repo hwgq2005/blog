@@ -18,8 +18,8 @@
 
 </head>
 <body >
+	
 <div id="wrapper">
-
 	<!-- start header -->
 		<header>
         <div class="navbar navbar-default navbar-static-top">
@@ -53,34 +53,29 @@
 	</header>
 
 	<!-- end header -->
-	
 	<section id="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8">
-				 	<section id="search-results" style="display: none;">
-	  <p>Search results</p>
-	  <div class="entries">
-	  </div>
-	</section>
-
-	
-			</div>
-							<div class="col-lg-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="search-c" id="search-c">
+						
+					</div>
+				</div>
+								<div class="col-lg-4">
 				<aside class="right-sidebar">
 				<div class="widget">
 					<form class="form-search" action="search.html">
-						<input class="form-control " type="text"  id="search-query" name="q" placeholder="Search" autocomplete="off">
+						<input class="form-control " type="text"  id="search-query" name="search" placeholder="Search" autocomplete="off">
 					</form>
 				</div>
 				<div class="widget">
 					<h5 class="widgetheading">分类</h5>
 					<ul class="cat">
-						<li><i class="icon-angle-right"></i><a href="#">HTML5</a><span> (20)</span></li>
-						<li><i class="icon-angle-right"></i><a href="#">CSS3</a><span> (11)</span></li>
-						<li><i class="icon-angle-right"></i><a href="#">Javascript</a><span> (9)</span></li>
-						<li><i class="icon-angle-right"></i><a href="#">Webpack</a><span> (12)</span></li>
-						<li><i class="icon-angle-right"></i><a href="#">Nodejs</a><span> (18)</span></li>
+						<li><i class="icon-angle-right"></i><a href="?search=HTML5">HTML5</a><span></span></li>
+						<li><i class="icon-angle-right"></i><a href="?search=CSS3">CSS3</a><span></span></li>
+						<li><i class="icon-angle-right"></i><a href="?search=Javascript">Javascript</a><span> </span></li>
+						<li><i class="icon-angle-right"></i><a href="?search=Webpack">Webpack</a><span></span></li>
+						<li><i class="icon-angle-right"></i><a href="?search=Nodejs">Nodejs</a><span></span></li>
 					</ul>
 				</div>
 				<div class="widget">
@@ -140,8 +135,8 @@
 				</aside>
 			</div>
 
+			</div>
 		</div>
-	</div>
 	</section>
 	<footer>
 	<div class="container">
@@ -214,9 +209,6 @@
 	
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 <input type="hidden" id="baseurl" value=""/>
 <script src="/res/js/jquery.js"></script>
 <!-- <script src="/res/js/jquery.easing.1.3.js"></script> -->
@@ -230,50 +222,85 @@
 <script src="/res/js/animate.js"></script>
 <script src="/res/js/custom.js"></script>
 <script src="/res/js/google-code-prettify/run_prettify.js?lang-js&skin=tomorrow-night"></script>
-<script src="/res/js/lunr-js-search/build/lunr.min.js"></script>
-<!-- <script src="/res/js/mustache.js"></script>
-<script src="/res/js/lunr-js-search/build/search.js"></script> -->
+<script src="/res/js/lodash.core.min.js"></script>
 
-<script id="search-results-template" type="text/mustache">
-  
-    <article>
-      <h3>
-        <small><time datetime="" pubdate></time></small>
-        <a href=""></a>
-      </h3>
-    </article>
-  
-</script>
 <script>
 	$(function(){
-		 var index = lunr(function () {
-		    this.field('title', {boost: 10})
-		    this.field('title')
-		    this.ref('id')
-		  })
+		var searchVal = getQueryString('search'),
+			searchC  = $('#search-c');
 
-		  index.add({
-		    id: 5,
-		    title: 'Foo',
-		    body: 'Foo foo foo!'
-		  })
-
-		  index.add({
-		    id: 1,
-		    title: 'Bar',
-		    body: 'Bar baor bar!'
-		  })
-
-		console.log(index.search('ar'))
-
-	 //   	$('#search-query').lunrSearch({
-		//       indexUrl: 'search.json',             // URL of the `search.json` index data for your site
-		//       results:  '#search-results',          // jQuery selector for the search results container
-		//       entries:  '.entries',                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
-		//       template: '#search-results-template'  // jQuery selector for the Mustache.js template
-		// });
-		  
+		var post = {
+			  "list":[{
+			    "title":"JavaScript 声明提升",
+			        "url":"/javascript/JavaScript-Hoisting.html",
+			        "date":"2015-03-16",
+			        "author":"H君",
+			        "summary":"JavaScript 声明提升(hoisting) 很容易忽略从而造成Bug",
+			        "images":"/res/img/page/JavaScript/JavaScript-hoisting.png"
+			    },
+			  {
+			    "title":"Jekyll 安装教程",
+			        "url":"/jekyll/github-jekyll.html",
+			        "date":"2015-03-14",
+			        "author":"H君",
+			        "summary":"Jekyll 安装教程",
+			        "images":"/res/img/page/jekyll/open-source.png"
+			    },
+			  {
+			    "title":"git上传本地文件到github",
+			        "url":"/github/github.html",
+			        "date":"2015-03-02",
+			        "author":"H君",
+			        "summary":"git上传本地文件到github",
+			        "images":"/res/img/slides/3.jpg"
+			    },
+			  {
+			    "title":"协同合作，开发文档。",
+			        "url":"/jekyll/md-test.html",
+			        "date":"2015-03-01",
+			        "author":"H君",
+			        "summary":"协同合作，开发文档。",
+			        "images":"/res/img/slides/1.jpg"
+			    }
+			  
+			]};
+		var filterData=_.filter(post.list,function(elem){
+			var tit=elem.title.toLowerCase();
+			return tit.match(searchVal.toLowerCase()); 
+		});
+		var _html='';
+		// _html='<article><p>JavaScript 声明提升</p></article><article><p>Jekyll 安装教程</p></article><article><p>git上传本地文件到github</p></article><article><p>协同合作，开发文档。</p></article>';
+		if (filterData.length != 0) {
+			$.each(filterData, function(index, val) {
+				 _html+='<article>'
+							+'<div class="post-image">'
+								+'<div class="post-heading">'
+									+'<h3><a  href="'+val.url+'">'+val.title+'</a></h3>'
+								+'</div>'
+								+'<img src="'+val.images+'" alt="'+val.summary+'" />'
+							+'</div>'
+							+'<p>'+val.summary+'</p>'
+							+'<div class="bottom-article">'
+								+'<ul class="meta-post">'
+									+'<li><i class="icon-calendar"></i><a href="#">'+val.date+'</a></li>'
+									+'<li><i class="icon-user"></i><a href="#">'+val.author+'</a></li>'
+								+'</ul>'
+								+'<a href="'+val.url+'"  class="pull-right">Continue reading <i class="icon-angle-right"></i></a>'
+							+'</div>'
+						+'</article>';
+			});
+		}else{
+			_html='<p style="text-align:center"><img src="/res/img/page/jekyll/open-source.png" style="width:300px;" alt="搜索无结果"></p><p style="text-align:center;margin-top:30px;"><strong style="">暂无结果</strong></p>';
+		}
+		searchC.html(_html);
 	})
+
+	function getQueryString(name) {
+		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if (r != null) return decodeURI(r[2]);
+		return null;
+	}
 </script>
 </body>
 </html>

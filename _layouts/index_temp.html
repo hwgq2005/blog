@@ -12,8 +12,8 @@
 
 </head>
 <body >
+	
 <div id="wrapper">
-
 	<!-- start header -->
 	{% include header.html%}
 	<!-- end header -->
@@ -32,50 +32,6 @@
 	
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
 {% include script.html%}
-<script id="search-results-template" type="text/mustache">
-  {{#entries}}
-    <article>
-      <h3>
-        {{#date}}<small><time datetime="{{pubdate}}" pubdate>{{displaydate}}</time></small>{{/date}}
-        <a href="{{url}}">{{title}}</a>
-      </h3>
-    </article>
-  {{/entries}}
-</script>
-<script>
-	$(function(){
-		 var index = lunr(function () {
-		    this.field('title', {boost: 10})
-		    this.field('title')
-		    this.ref('id')
-		  })
-
-		  index.add({
-		    id: 5,
-		    title: 'Foo',
-		    body: 'Foo foo foo!'
-		  })
-
-		  index.add({
-		    id: 1,
-		    title: 'Bar',
-		    body: 'Bar baor bar!'
-		  })
-
-		console.log(index.search('ar'))
-
-	 //   	$('#search-query').lunrSearch({
-		//       indexUrl: 'search.json',             // URL of the `search.json` index data for your site
-		//       results:  '#search-results',          // jQuery selector for the search results container
-		//       entries:  '.entries',                 // jQuery selector for the element to contain the results list, must be a child of the results element above.
-		//       template: '#search-results-template'  // jQuery selector for the Mustache.js template
-		// });
-		  
-	})
-</script>
 </body>
 </html>

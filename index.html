@@ -3,6 +3,7 @@ layout: index_temp
 ---
 	 {% for post in paginator.posts %}
 				<article>
+
 						{% if post.show_type == "image" %}
 						
 						<div class="post-image">
@@ -51,10 +52,6 @@ layout: index_temp
 
 						<div class="bottom-article">
 							<ul class="meta-post">
-								{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-							    {% capture this_month %}{{ post.date | date: "%m" }}{% endcapture %}
-							    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-							    {% capture next_month %}{{ post.previous.date | date: "%m" }}{% endcapture %}
 								<li><i class="icon-calendar"></i><a href="#">{{ post.date | date: "%Y-%m-%d" }}</a></li>
 								<li><i class="icon-user"></i><a href="#"> {{post.author}}</a></li>
 								<!-- <li><i class="icon-folder-open"></i><a href="#"> Blog</a></li>
