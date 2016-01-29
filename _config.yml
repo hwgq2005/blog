@@ -17,6 +17,3 @@ index_keyword: 开源网站,共同开发,javaScritp 教程,html5 教程,css3 教
 index_description: 低调做人、高调做事
 # index_author: https://github.com/hwgq2005/blog.git
 index_author: git@git.coding.net:hwgq2005/blog.git
-
-lunr_search:
-excludes: [atom.xml]
