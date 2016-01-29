@@ -1,7 +1,8 @@
 encoding: utf-8
 
 # baseurl : 
-baseurl : http://hwgq2005.github.io/blog
+baseurl : http://hwgq2005.coding.me/blog
+# baseurl : http://hwgq2005.github.io/blog
 permalink : /:categories/:title.html
 markdown: kramdown
 gems: [jekyll-paginate]
@@ -14,7 +15,8 @@ paginate_path: "page:num"
 indet_title: H君的日志
 index_keyword: 开源网站,共同开发,javaScritp 教程,html5 教程,css3 教程,webapp 教程
 index_description: 低调做人、高调做事
-index_author: https://github.com/hwgq2005/blog.git
+# index_author: https://github.com/hwgq2005/blog.git
+index_author: git@git.coding.net:hwgq2005/blog.git
 
 lunr_search:
 excludes: [atom.xml]
