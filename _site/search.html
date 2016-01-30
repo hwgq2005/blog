@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>H君</title>
+<title>H君的日志</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="H君" />
+<meta name="description" content="H君的日志" />
 <meta name="keywords" content="">
 <meta name="author" content="git@git.coding.net:hwgq2005/blog.git" />
 <link rel="icon" href="/res/img/favicon.ico">
@@ -58,7 +58,7 @@
 			<div class="row">
 				<div class="col-lg-8">
 					<div class="search-c" id="search-c">
-						
+							搜索结果
 					</div>
 				</div>
 								<div class="col-lg-4">
@@ -122,11 +122,9 @@
 					<h5 class="widgetheading">热门标签</h5>
 					<ul class="tags">
 						
-						<li><a href="javascript:void(0)">开发文档</a></li>
+						<li><a href="javascript:void(0)">jekyll</a></li>
 						
 						<li><a href="javascript:void(0)">github</a></li>
-						
-						<li><a href="javascript:void(0)">jekyll</a></li>
 						
 						<li><a href="javascript:void(0)">JavaScript</a></li>
 						
@@ -241,7 +239,8 @@
 			        "date":"2015-03-16",
 			        "author":"H君",
 			        "summary":"JavaScript 声明提升(hoisting) 很容易忽略从而造成Bug",
-			        "images":"/res/img/page/JavaScript/JavaScript-hoisting.png"
+			        "images":"/res/img/page/JavaScript/JavaScript-hoisting.png",
+			        "tags":"JavaScript"
 			    },
 			  {
 			    	"title":"Jekyll 安装教程",
@@ -249,7 +248,8 @@
 			        "date":"2015-03-14",
 			        "author":"H君",
 			        "summary":"Jekyll 安装教程",
-			        "images":"/res/img/page/jekyll/open-source.png"
+			        "images":"/res/img/page/jekyll/open-source.png",
+			        "tags":"jekyll"
 			    },
 			  {
 			    	"title":"git上传本地文件到github",
@@ -257,7 +257,8 @@
 			        "date":"2015-03-02",
 			        "author":"H君",
 			        "summary":"git上传本地文件到github",
-			        "images":"/res/img/slides/3.jpg"
+			        "images":"/res/img/slides/3.jpg",
+			        "tags":"github"
 			    },
 			  {
 			    	"title":"jekyll开发文档。",
@@ -265,7 +266,8 @@
 			        "date":"2015-03-01",
 			        "author":"H君",
 			        "summary":"jekyll教程。",
-			        "images":"/res/img/slides/1.jpg"
+			        "images":"/res/img/slides/1.jpg",
+			        "tags":"jekyll"
 			    }
 			  
 			]};
@@ -288,9 +290,10 @@
 							+'<div class="bottom-article">'
 								+'<ul class="meta-post">'
 									+'<li><i class="icon-calendar"></i><a href="#">'+val.date+'</a></li>'
+									+'<li><i class="icon-folder-open"></i><a href="#">'+val.tags+'</a></li>'
 									+'<li><i class="icon-user"></i><a href="#">'+val.author+'</a></li>'
 								+'</ul>'
-								+'<a href="'+val.url+'"  class="pull-right">Continue reading <i class="icon-angle-right"></i></a>'
+								+'<a href="'+val.url+'"  class="pull-right">Reading <i class="icon-angle-right"></i></a>'
 							+'</div>'
 						+'</article>';
 			});

@@ -12,10 +12,10 @@ tags: [JavaScript]
 
 #JavaScript 变量提升# 
 
->JavaScript Hoisting
+`JavaScript`
 
 --- 
->JavaScript 的历史原因决定JavaScript有许多问题，和让人容易忽略的地方。但都是重要的。
+`JavaScript` 的历史原因决定`JavaScript`有许多问题，和让人容易忽略的地方。但都是重要的。
 
 ###1.  var 声明变量###
 

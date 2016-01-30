@@ -12,6 +12,8 @@ tags: [jekyll]
 
 # 协作开发文档
 
+`jekyll` `GitHub`
+
 --- 
 
 ## GitHub 与 Jekyll
