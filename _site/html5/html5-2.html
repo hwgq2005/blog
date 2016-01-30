@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>JavaScript 声明提升 - H君</title>
+<title>HTML5 DOM扩展 - H君</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="JavaScript 声明提升(hoisting) 很容易忽略从而造成Bug">
-<meta name="keywords" content="JavaScript变量提升,JavaScript函数提升,JavaScript常见问题">
+<meta name="description" content="HTML5 DOM扩展">
+<meta name="keywords" content="HTML5">
 <meta name="author" content="H君">
 <link rel="icon" href="/res/img/favicon.ico">
 <link href="/res/css/bootstrap.min.css" rel="stylesheet" />
@@ -52,138 +52,92 @@
 
 	<section id="content">
 		<div class="container">
-	 		<h1 id="javascript-">JavaScript 变量提升</h1>
+	 		<h1 id="html5-dom">HTML5 DOM扩展</h1>
 
-<p><code class="highlighter-rouge">JavaScript</code></p>
+<p><code class="highlighter-rouge">HTML5</code> <code class="highlighter-rouge">JavaScript</code></p>
 
 <hr />
-<p><code class="highlighter-rouge">JavaScript</code> 的历史原因决定<code class="highlighter-rouge">JavaScript</code>有许多问题，和让人容易忽略的地方。但都是重要的。</p>
 
-<h3 id="var-">1.  var 声明变量</h3>
+<p><img src="../res/img/page/img2.jpg" alt="HTML5" /></p>
 
-<h4 id="hoisting">声明提升(hoisting)</h4>
+<h3 id="section">一、选择符</h3>
+<hr />
 
-<p>先看一段代码</p>
+<p>1.<code class="highlighter-rouge">querySelector()</code>方法：返回与该模式匹配的第一个元素：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var v = 'hoisting';
-function test_hoisting(){
-	console.log(v);
-	var v = 'hoisted';
+<p><b></b></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//取得body元素
+var body = document.querySelector("body");
+
+//获取的ID为"one"的元素
+var one = document.querySelector("#one");
+
+//获取的Class为"two"的第一个元素。注意：并不是所有元素
+var two = document.querySelector(".two");
+</code></pre>
+</div>
+
+<p>2.<code class="highlighter-rouge">querySelectorAll()</code>方法 ：返回与该模式匹配的所有元素:</p>
+
+<p><b></b></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//获取的所有"li"的元素
+var lis=document.querySelectirAll("li");
+
+//获取的ID为="box"下所有"li"的元素
+var lis=document.querySelectir("#box").querySelectirAll("li");
+
+//获取的img标签Class为"show"的所有元素
+var lis=document.querySelectirAll("img.show");
+</code></pre>
+</div>
+
+<p>3.<code class="highlighter-rouge">matchesSelector()</code>方法 ：调用元素是否与选择符匹配:</p>
+
+<p><b></b></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if(document.body.matchesSelector('body.app'){
+	//ture
 }
 </code></pre>
 </div>
 
-<p>结果是什么呢：<code class="highlighter-rouge">undefined</code>.
-因为 <code class="highlighter-rouge">声明提升</code>的原因 以上代码 和下面的代码 同理。</p>
+<h3 id="section-1">二、元素遍历</h3>
+<hr />
 
-<div class="highlighter-rouge"><pre class="highlight"><code>var v = 'hoisting';
-function test_hoisting(){
-	var v;
-	console.log(v);
-	v = 'hoisted';
-}
+<p>1.<code class="highlighter-rouge">childElementCount</code>:返回子元素的个数(不包括文本节点和注释)</p>
+
+<p>2.<code class="highlighter-rouge">firstElementChild</code>:指向第一个子元素</p>
+
+<p>3.<code class="highlighter-rouge">lastElementChild</code>:指向最后子元素</p>
+
+<p>4.<code class="highlighter-rouge">previousElementSibling</code>:指向前一个同辈元素</p>
+
+<p>5.<code class="highlighter-rouge">nextElementSibling</code>:指向下一个同辈元素</p>
+
+<p>6.<code class="highlighter-rouge">classList</code>属性：可以对类名进行添加、删除、替换等操作:</p>
+
+<p><b></b></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//删除"hide"类
+div.classList.remove("hide");
+
+//添加"show"类
+div.classList.add("show");
+
+//切换"high"类
+div.classList.toggle("high");
 </code></pre>
 </div>
-
-<p>function作用域里的变量 遮盖了上层作用域变量，声明又被提升 所以就会出现<code class="highlighter-rouge">undefined</code></p>
 
 <blockquote>
-  <p><code class="highlighter-rouge">声明提升</code>:是JavaScript 所有声明默认的行为（包括<code class="highlighter-rouge">function</code>） 提升的范围就是当前作用域的顶部。
- JavaScript 只是提升声明，并不提升初始化。</p>
+  <p>更多拓展请查看相关资料,本人看的是<code class="highlighter-rouge">&lt;javascript高级程序设计 第3版&gt;</code></p>
 </blockquote>
-
-<p>再看下面的代码：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var test_hoisting2 = 3;
-
-function test_hoisting2(){
-
-}
-console.log(typeof test_hoisting2);
-</code></pre>
-</div>
-
-<p>结果是 <code class="highlighter-rouge">number</code>为什么？</p>
-
-<p>之前说过<code class="highlighter-rouge">function</code> 也会提升。由于在 <code class="highlighter-rouge">JavaScript</code>中 <code class="highlighter-rouge">function</code>是一等公民，<code class="highlighter-rouge">function</code> 会先提升. 
-<strong>函数的声明 比 变量的声明 具有高的优先级。</strong> 
-所以 <code class="highlighter-rouge">function test_hoisting2</code> 优先提升，被 <code class="highlighter-rouge">var test_hoisting2</code>覆盖。</p>
-
-<blockquote>
-  <p>关于变量提升的问题都大同小异，在实际开发中要避免这个特性，把变量定义在顶部。就会避免出现不必要的问题。</p>
-</blockquote>
-
-<p>在 Chrome 里有个奇怪的问题：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log(typeof name);
-var name = "Chrome";
-console.log(typeof name); 
-</code></pre>
-</div>
-
-<p>经过上面示例，我们期待的结果是 <code class="highlighter-rouge">undefined</code> <code class="highlighter-rouge">string</code>. 但是结果却都是 <code class="highlighter-rouge">string</code>.如果我们再试一次，将<code class="highlighter-rouge">name</code>换成 其他的 <code class="highlighter-rouge">name2</code> 就是我们预期的结果了.原因是 
-<strong>Chrome</strong>
-可能初始化 <code class="highlighter-rouge">name</code> 导致我们使用时，已经声明完成，所以就是<code class="highlighter-rouge">string</code>了</p>
-
-<hr />
-
-<h3 id="section">2. 关于函数提升</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log(typeof foo);
-console.log(typeof bar);
-console.log(typeof add);
-//函数的声明
-function foo(){
-    alert('foo');
-}
-//命名函数表达式
-var bar = function(){
-    alert('bar');
-};
-// 函数表达式-匿名函数
-var add = function(a,b){
-return a+b;
-};
-</code></pre>
-</div>
-
-<p>结果是<code class="highlighter-rouge">function</code> <code class="highlighter-rouge">undefined</code> <code class="highlighter-rouge">undefined</code> 因为 <code class="highlighter-rouge">foo()</code>是根据<code class="highlighter-rouge">function</code>提升的。
-<code class="highlighter-rouge">foo()</code>被提升到了顶部且能正常运行，而bar()的定义并没有得到提升，
-仅有它的声明被提升，所以，当执行bar()的时候显示结果为undefined而不是作为函数来使用。</p>
-
-<hr />
-
-<p>一个方法总结声明<code class="highlighter-rouge">提升</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var global = 'global';
-function foo(){alert(global);}
-
-function hoist(){
-    console.log(typeof foo);//function
-    console.log(typeof bar);//undefined
-    console.log(typeof global);//undefined
-
-    foo();//'undefined' global仅提升声明，并未提升初始化。
-    bar();//TypeError: 'undefined' is not a function  
-    var global = 'local';
-    //变量foo以及实现者被提升
-    function foo(){
-        console.log(global);
-    }
-
-    //仅变量bar被提升，函数实现部分 并未被提升
-    var bar = function(){
-        alert(global);
-    };
-}
-
-hoist(); 
-</code></pre>
-</div>
 
 	 		<div class="pull-right">
 	 			<!-- 分享 -->
-<div class="ds-share" data-thread-key="/javascript/JavaScript-Hoisting" data-title="JavaScript 声明提升" data-images="/res/img/favicon.ico" data-content="JavaScript 声明提升(hoisting) 很容易忽略从而造成Bug" data-url="/javascript/JavaScript-Hoisting.html">
+<div class="ds-share" data-thread-key="/html5/html5-2" data-title="HTML5 DOM扩展" data-images="/res/img/favicon.ico" data-content="HTML5 DOM扩展" data-url="/html5/html5-2.html">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-32">
       	<li ><span  style="font-size:12px;height:32px;display:inline-block;line-height: 32px;color:#999;" >分享到：</span></li>
@@ -200,7 +154,7 @@ hoist();
 	 		</div>
 	 		<div class="row">
 	 			<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/javascript/JavaScript-Hoisting" data-title="JavaScript 声明提升" data-url="/javascript/JavaScript-Hoisting.html"></div>
+	<div class="ds-thread" data-thread-key="/html5/html5-2" data-title="HTML5 DOM扩展" data-url="/html5/html5-2.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">

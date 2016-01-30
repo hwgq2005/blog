@@ -16,7 +16,7 @@
 
 @media screen {
   .str {
-    color: #E7EA78;
+    color: #E6DB74;
   }
 
   .kwd {
@@ -48,15 +48,15 @@
   }
 
   .tag {
-    color: #cc6666;
+    color: #FA7A9B;
   }
 
   .atn {
-    color: #de935f;
+    color: #A6E22E;
   }
 
   .atv {
-    color: #8abeb7;
+    color: #E6DB74;
   }
 
   .dec {

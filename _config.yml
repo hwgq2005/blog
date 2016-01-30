@@ -10,6 +10,6 @@ paginate_path: "page:num"
 
 ##首页头部信息
 indet_title: H君的日志
-index_keyword: 开源网站,共同开发,javaScritp 教程,html5 教程,css3 教程,webapp 教程
+index_keyword: javaScritp 教程,html5 教程,css3 教程,webapp 教程
 index_description: 低调做人、高调做事
 index_author: git@git.coding.net:hwgq2005/blog.git
