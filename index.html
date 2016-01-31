@@ -1,8 +1,8 @@
 ---
 layout: index_temp
 ---
-	 {% assign site = (paginator.posts == "undefined" ||  paginator.posts == "null" ? site.posts : paginator.posts ) %}
-	 {% for post in site %}
+	 
+	 {% for post in paginator.posts %}
 				<article>
 
 						{% if post.show_type == "image" %}
