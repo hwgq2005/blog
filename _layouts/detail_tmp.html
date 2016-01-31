@@ -28,6 +28,9 @@
 		.jiathis_style .jiadiv_01 > div{
 			padding:0 5px!important;
 		}
+		.music{
+			
+		}
 </style>
 </head>
 <body>
@@ -36,7 +39,14 @@
 	{% include header.html%}
 	<section id="content">
 		<div class="container">
+			
+			
 	 		{{content}}
+	 		<div class="music">
+				<audio controls="controls" autoplay="autoplay" >
+				  <source src="http://dl.stream.qqmusic.qq.com/C200001OyHbk2MSIi4.m4a?vkey=E8C2D7E0D29896BB4B63F889F79E40AA73244F9DF5B12EABA5555D9BA7FBA7B5192FFBD4A54E9F7E2B739A75F669D74C9899F0B0B38E7B54&guid=24939200&fromtag=0" type="audio/mpeg" />
+				</audio>
+			</div>
 	 		<div class="pull-right">
 	 			{% include share.html%}				
 	 		</div>
@@ -46,6 +56,7 @@
 		</div>
 	</section>
 	{% include footer.html%}
+	
 
 </div>
 
