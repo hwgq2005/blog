@@ -1,7 +1,7 @@
 ---
 layout: detail_tmp
-title: JavaScript 声明提升
-intro: JavaScript 声明提升(hoisting) 很容易忽略从而造成Bug
+title: JavaScript 变量声明提升
+intro: JavaScript 变量声明提升 很容易忽略从而造成Bug
 categories: JavaScript
 keyword: JavaScript变量提升,JavaScript函数提升,JavaScript常见问题
 author: H君
@@ -10,7 +10,7 @@ show_intro: /res/img/page/JavaScript/JavaScript-hoisting.png
 tags: [JavaScript]
 ---
 
-#JavaScript 变量提升# 
+#JavaScript 变量声明提升# 
 
 `JavaScript`
 

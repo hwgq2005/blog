@@ -1,18 +1,18 @@
 ---
 layout: detail_tmp
-title: Jekyll 安装教程
-intro: Jekyll 安装教程
-categories: jekyll
+title: Jekyll安装教程
+intro: 1.下载Rubyisntallersdownloads 一路下一步。
+categories: Jekyll
 keyword: 协作开发，github 教程，jekyll教程
 author: H君
 show_type: image
 show_intro: /res/img/page/jekyll/open-source.png
-tags: [jekyll]
+tags: [Jekyll]
 ---
 
 # 协作开发文档
 
-`jekyll` `GitHub`
+`Jekyll` `GitHub`
 
 --- 
 
