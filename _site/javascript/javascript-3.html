@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AMD和CMD的区别 - H君的日志</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。">
+<meta name="keywords" content="AMD、CMD、Requirejs、Seajs">
+<meta name="author" content="H君">
+<link rel="icon" href="/res/img/favicon.ico">
+<link href="/res/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/res/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="/res/css/flexslider.css" rel="stylesheet" />
+<link href="/res/css/style.css" rel="stylesheet" />
+<link href="/res/skins/default.css" rel="stylesheet" />
+<link href="/res/js/google-code-prettify/tomorrow-night.css" rel="stylesheet" />
+
+<style>
+
+		.container .jiathis_style_32x32 .jiathis_counter.jiathis_bubble_style{
+			width:62px!important;
+		}
+		.jiathis_style > div{
+			width:320px!important;
+		}
+		.jiathis_style .searchTxt{
+			padding:0!important;
+			height:auto!important;
+			line-height:normal!important;
+		}
+		.jiathis_style .centerBottom{
+			display:none!important;
+		}
+		.jiathis_style .jiadiv_01 > div{
+			padding:0 5px!important;
+		}
+</style>
+</head>
+<body>
+<div id="wrapper">
+
+		<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><span>H君</span>的日志</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">Home</a></li>
+<!--                         <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="components.html">Components</a></li>
+								<li><a href="pricingbox.html">Pricing box</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li class="active"><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header>
+
+	<section id="content">
+		<div class="container">
+	 		<h1 id="amdcmd">AMD和CMD的区别</h1>
+
+<p><code class="highlighter-rouge">AMD</code> <code class="highlighter-rouge">CMD</code></p>
+
+<hr />
+
+<p><img src="../res/img/page/img7.jpg" alt="AMD、CMD" /></p>
+
+<p>AMD 规范：<a href="https://github.com/amdjs/amdjs-api/wiki/AMD" title="AMD" target="_blank">点击这里</a></p>
+
+<p>CMD 规范：<a href="https://github.com/seajs/seajs/issues/242" title="CMD" target="_blank">点击这里</a></p>
+
+<p><code class="highlighter-rouge">AMD</code> 是 RequireJS 对模块定义的规范化产出。</p>
+
+<p><code class="highlighter-rouge">CMD</code> 是 SeaJS 对模块定义的规范化产出。</p>
+
+<p>类似这些的还有很多…</p>
+
+<p>这些规范都是为了<code class="highlighter-rouge">javascript</code>的模块化开发。</p>
+
+<p><br /></p>
+
+<h4 id="section">模块化的好处主要由以下几点：</h4>
+
+<p>1.更好的分离</p>
+
+<p>2.更好的代码组织方式</p>
+
+<p>3.避免命名冲突</p>
+
+<p>4.更好的依赖处理</p>
+
+<p><br /></p>
+
+<h4 id="amdcmd-1">AMD与CMD主要区别：</h4>
+
+<p><code class="highlighter-rouge">AMD</code>推崇依赖前置，<code class="highlighter-rouge">CMD</code>推崇依赖就近。</p>
+
+<p>AMD：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//依赖需要提前
+define('a,b',function(a,b){
+    doing...
+})
+</code></pre>
+</div>
+
+<p>CMD:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>require(function(require, exports, module){
+    //依赖可以就近
+    var a=require('./a');
+    doing...
+    
+    //依赖可以就近
+    var b=require('./b')
+    doing...
+})
+</code></pre>
+</div>
+
+
+	 		<div class="pull-right">
+	 			<!-- 分享 -->
+<!-- <div class="ds-share" data-thread-key="/javascript/javascript-3" data-title="AMD和CMD的区别" data-images="/res/img/favicon.ico" data-content="AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。" data-url="/javascript/javascript-3.html">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-32">
+      	<li ><span  style="font-size:12px;height:32px;display:inline-block;line-height: 32px;color:#999;" >分享到：</span></li>
+        <li><a class="ds-qq" href="javascript:void(0);" data-service="qq"></a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div> -->
+
+
+ <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+<a class="jiathis_button_cqq"></a>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_weixin"></a>
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+				
+	 		</div>
+	 		<div class="row">
+	 			<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/javascript/javascript-3" data-title="AMD和CMD的区别" data-url="/javascript/javascript-3.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hwgq2005"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+			</div>
+		</div>
+	</section>
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">交流群</h5>
+					
+					<p>
+						前端交流群：364778978 
+					</p>
+					<p>
+						设计交流群（深圳）：341287750
+					</p>
+					<p>( 注：申请请注明来自H君的日志 )</p>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">宗旨</h5>
+					<ul class="link-list">
+						<li><a href="javascript:;">低调做人、高调做事</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">项目推荐</h5>
+					<ul class="link-list">
+						<li><a href="javascript:;" target="_blank">Hbook</a></li>
+						<li><a href="javascript:;" target="_blank">Rhythm</a></li>
+						<li><a href="javascript:;" target="_blank">Carousel</a></li>
+						<li><a href="javascript:;" target="_blank">Fan.js</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">作者</h5>
+					
+						<div class="flickr_badge" >
+							<img src="/res/authors/hjun.jpg" alt="H君" title="">
+						</div>
+					
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							<span>&copy; Blog 2014-2016 All right reserved. By H君</span>
+						</p>
+					</div>
+				</div>
+				 <div class="col-lg-6">
+					<ul class="social-network">
+						<!-- <li><a href="https://github.com/hwgq2005/blog" target="_blank" data-placement="top" title="GitHub"><i class="fa fa-github"></i></a></li> -->
+					<!-- 	<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+
+
+</div>
+
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<input type="hidden" id="baseurl" value=""/>
+<script src="/res/js/jquery.js"></script>
+<!-- <script src="/res/js/jquery.easing.1.3.js"></script> -->
+<script src="/res/js/bootstrap.min.js"></script>
+<script src="/res/js/jquery.fancybox.pack.js"></script>
+<script src="/res/js/jquery.fancybox-media.js"></script>
+<script src="/res/js/google-code-prettify/prettify.js"></script>
+<script src="/res/js/portfolio/jquery.quicksand.js"></script>
+<script src="/res/js/portfolio/setting.js"></script>
+<script src="/res/js/jquery.flexslider.js"></script>
+<script src="/res/js/animate.js"></script>
+<script src="/res/js/custom.js"></script>
+<script src="/res/js/lodash.core.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?efa15e3509612761ffd114dce7833efa";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body>
+</html>
