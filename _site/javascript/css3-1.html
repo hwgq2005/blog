@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>快速入门 - Less - H君</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Less CSS 是一个使用广泛的 CSS 预处理器。">
+<meta name="keywords" content="JavaScript,HTML5,CSS3,Less">
+<meta name="author" content="H君">
+<link rel="icon" href="/res/img/favicon.ico">
+<link href="/res/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/res/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="/res/css/flexslider.css" rel="stylesheet" />
+<link href="/res/css/style.css" rel="stylesheet" />
+<link href="/res/skins/default.css" rel="stylesheet" />
+<link href="/res/js/google-code-prettify/tomorrow-night.css" rel="stylesheet" />
+
+</head>
+<body>
+<div id="wrapper">
+
+		<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><span>H君</span>的日志</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">Home</a></li>
+<!--                         <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="components.html">Components</a></li>
+								<li><a href="pricingbox.html">Pricing box</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li class="active"><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header>
+
+	<section id="content">
+		<div class="container">
+	 		<h1 id="less">快速入门 - Less</h1>
+
+<p><code class="highlighter-rouge">Less</code></p>
+
+<hr />
+
+<p><img src="../res/img/page/img6.jpg" alt="jekyll开发文档" /></p>
+
+<p>下面给大家讲解下Less，纯手工，入门级别，相信没学过的人阅读完后就懂了，以下是我要讲的四点：</p>
+
+<p><br /></p>
+
+<h4 id="section">一、简单介绍：</h4>
+
+<p>Less CSS 是一个使用广泛的 CSS 预处理器。</p>
+
+<p>对 CSS 进行扩展，减少很多 CSS 的代码量。</p>
+
+<p>LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数。</p>
+
+<p>LESS 既可以在 客户端 上运行 (支持IE 6+, Webkit, Firefox)，也可一在服务端运行 (借助 Node.js)。</p>
+
+<p><br /></p>
+
+<h4 id="section-1">二、快速入门</h4>
+
+<p>在服务器端最容易的安装方式就是通过 npm （node.js 的包管理器），方法如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install -g less
+</code></pre>
+</div>
+
+<p>安装 Less 后，就可以在命令行上调用 Less 编译器了，如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lessc gloal.less
+</code></pre>
+</div>
+
+<p>你可以将输出重定向到一个文件：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lessc gloal.less &gt; gloal.css
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="section-2">三、常用语法　</h4>
+
+<h5 id="section-3">1.变量</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@color: #4d926f; 
+#header { color: @color; }
+#header { color: #4d926f; }
+
+@color: #253636; 
+@color: #ff3636;     		//覆盖第一次的定义
+#header {color: @color;}        //多次反复解析
+#header {color: #ff3636;}
+</code></pre>
+</div>
+
+<h5 id="mixins-">2.Mixins——混入, 类似函数或宏</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.borderRadius(@radius:3px){ 
+    -moz-border-radius: @radius; 
+    -webkit-border-radius: @radius; 
+    border-radius: @radius; 
+} 
+#header { .borderRadius(10px); } 
+.btn { .borderRadius} 
+</code></pre>
+</div>
+
+<p>编译后：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#header { 
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px; 
+    border-radius: 10px; 
+} 
+.btn {
+    -moz-border-radius: 3px; 
+    -webkit-border-radius: 3px; 
+    border-radius: 3px; 
+}  
+</code></pre>
+</div>
+
+<p>Mixins注意事项：</p>
+
+<p>a.可以不使用参数 .wrap(){…} .pre{ .wrap }</p>
+
+<p>b.内置变量@arguments代表所有参数(运行时)的值</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.boxShadow(@x:0,@y:0,@blur:1px,@color:#000){ 
+	box-shadow: @arguments; 
+} 
+</code></pre>
+</div>
+
+<p>注意，在参数没有默认值的前提下使用@arguments调用时必须赋值，否则会导致整个页面内的less语法出错而失效。</p>
+
+<p>c. Mixins必须使用ID或者类，即#xx或.xx，否则无效。</p>
+
+<h5 id="section-4">3.嵌套</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#header { 
+    &amp;.fl{ float: left; }
+    .mln { margin-left: 0; } 
+} 
+</code></pre>
+</div>
+
+<p>编译后：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#header.fl{float: left;} 
+#header .mln {margin-left: 0;}
+</code></pre>
+</div>
+
+<h5 id="section-5">4.嵌套</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@init: #111111; 
+@transition: @init*2; 
+.switchColor { 
+     color: @transition;     
+}
+.switchColor { 
+   color: #222222; 
+}
+.lightColor{
+   lighten(@color, 10%);
+}
+</code></pre>
+</div>
+
+<p>运算主要是针对任何数字、颜色、变量的操作，支持加、减、乘、除、()或者更复杂的综合运算；而Functions主要是针对颜色，同时提供了部分数学函数，具体的API可参阅文档。</p>
+
+<h5 id="section-6">5.继承</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.animal {  background-color: black;  color: white;}
+.bear {  &amp;:extend(.animal);  background-color: brown;}
+</code></pre>
+</div>
+
+<p>当前还有其他继承的写法，我这只是写了其中的一种，详细可在官网上查看文档。</p>
+
+<h5 id="section-7">6.作用域</h5>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>@var: red; 
+#page { 
+    @var: white;
+    #header { color: @var; // white } 
+}
+#footer { 
+    color: @var; // red 
+}
+</code></pre>
+</div>
+
+<p>Less中的变量、Mixins等的作用域都只是当前文件！</p>
+
+<h5 id="section-8">7.注释</h5>
+
+<p>单行注释方式： //单行注释</p>
+
+<p>单行、多行注释： /* 注释 多行注释 */</p>
+
+<p><br /></p>
+
+<h4 id="section-9">四、资源</h4>
+
+<p>官网：lesscss.org</p>
+
+<p>中文社区：www.lesscss.net</p>
+
+<p>在线LESS编译：http://tool.oschina.net/less</p>
+
+	 		<div class="pull-right">
+	 			<!-- 分享 -->
+<div class="ds-share" data-thread-key="/javascript/css3-1" data-title="快速入门 - Less" data-images="/res/img/favicon.ico" data-content="Less CSS 是一个使用广泛的 CSS 预处理器。" data-url="/javascript/css3-1.html">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-32">
+      	<li ><span  style="font-size:12px;height:32px;display:inline-block;line-height: 32px;color:#999;" >分享到：</span></li>
+        <li><a class="ds-qq" href="javascript:void(0);" data-service="qq"></a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>				
+	 		</div>
+	 		<div class="row">
+	 			<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/javascript/css3-1" data-title="快速入门 - Less" data-url="/javascript/css3-1.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hwgq2005"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+			</div>
+		</div>
+	</section>
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">交流群</h5>
+					
+					<p>
+						<i class="icon-phone"></i> 前端交流群：364778978 <br>
+					</p>
+					<p>( 注：申请请注明来自H君的日志 )</p>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">宗旨</h5>
+					<ul class="link-list">
+						<li><a href="javascript:;">低调做人、高调做事</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">项目推荐</h5>
+					<ul class="link-list">
+						<li><a href="javascript:;" target="_blank">Hbook</a></li>
+						<li><a href="javascript:;" target="_blank">Rhythm</a></li>
+						<li><a href="javascript:;" target="_blank">Carousel</a></li>
+						<li><a href="javascript:;" target="_blank">Fan.js</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">作者</h5>
+					
+						<div class="flickr_badge" >
+							<img src="/res/authors/hjun.jpg" alt="H君" title="">
+						</div>
+					
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							<span>&copy; Blog 2014-2016 All right reserved. By H君</span>
+						</p>
+					</div>
+				</div>
+				 <div class="col-lg-6">
+					<ul class="social-network">
+						<!-- <li><a href="https://github.com/hwgq2005/blog" target="_blank" data-placement="top" title="GitHub"><i class="fa fa-github"></i></a></li> -->
+					<!-- 	<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+
+
+</div>
+
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<input type="hidden" id="baseurl" value=""/>
+<script src="/res/js/jquery.js"></script>
+<!-- <script src="/res/js/jquery.easing.1.3.js"></script> -->
+<script src="/res/js/bootstrap.min.js"></script>
+<script src="/res/js/jquery.fancybox.pack.js"></script>
+<script src="/res/js/jquery.fancybox-media.js"></script>
+<script src="/res/js/google-code-prettify/prettify.js"></script>
+<script src="/res/js/portfolio/jquery.quicksand.js"></script>
+<script src="/res/js/portfolio/setting.js"></script>
+<script src="/res/js/jquery.flexslider.js"></script>
+<script src="/res/js/animate.js"></script>
+<script src="/res/js/custom.js"></script>
+<script src="/res/js/lodash.core.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?efa15e3509612761ffd114dce7833efa";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</body>
+</html>
