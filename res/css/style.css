@@ -157,7 +157,7 @@ header .navbar-default .navbar-nav > .open > a:focus {
 
 
 header .navbar {
-    min-height: 100px;
+    /*min-height: 100px;*/
 }
 
 header .navbar-nav > li  {
@@ -351,7 +351,7 @@ section.callaction {
 #content {
 	position:relative;
 	background:#fff;
-	padding:50px 0 40px 0;
+	/*padding:0 0 20px 0;*/
 }
 
 #content img {
