@@ -52,7 +52,7 @@
 			  {% endfor %}
 			]};
 		var filterData=_.filter(post.list,function(elem){
-			var tit=elem.title.toLowerCase();
+			var tit=elem.tags.toLowerCase();
 			return tit.match(searchVal.toLowerCase()); 
 		});
 		var _html='';
