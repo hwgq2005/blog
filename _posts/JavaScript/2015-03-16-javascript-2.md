@@ -6,7 +6,7 @@ categories: JavaScript
 keyword: JavaScript变量提升,JavaScript函数提升,JavaScript常见问题
 author: H君
 show_type: image
-show_intro: /res/img/page/JavaScript/JavaScript-hoisting.png
+show_intro: /res/img/page/img8.jpg
 tags: [JavaScript]
 ---
 
@@ -15,6 +15,9 @@ tags: [JavaScript]
 `JavaScript`
 
 --- 
+
+![JavaScript](../res/img/page/img8.jpg)
+
 `JavaScript` 的历史原因决定`JavaScript`有许多问题，和让人容易忽略的地方。但都是重要的。
 
 ###1.  var 声明变量###
