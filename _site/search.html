@@ -92,11 +92,43 @@
 				<div class="widget">
 					<h5 class="widgetheading">分类</h5>
 					<ul class="cat">
-						<li><i class="icon-angle-right"></i><a href="/search.html?search=HTML5">HTML5</a><span></span></li>
-						<li><i class="icon-angle-right"></i><a href="/search.html?search=CSS3">CSS3</a><span></span></li>
-						<li><i class="icon-angle-right"></i><a href="/search.html?search=Javascript">Javascript</a><span> </span></li>
-						<li><i class="icon-angle-right"></i><a href="/search.html?search=Webpack">Webpack</a><span></span></li>
-						<li><i class="icon-angle-right"></i><a href="/search.html?search=Nodejs">Nodejs</a><span></span></li>
+						
+							<li>
+								<a href="/search.html?search=JavaScript">
+									JavaScript (3)
+								</a>
+							</li>
+						
+							<li>
+								<a href="/search.html?search=html5">
+									html5 (2)
+								</a>
+							</li>
+						
+							<li>
+								<a href="/search.html?search=Jekyll">
+									Jekyll (2)
+								</a>
+							</li>
+						
+							<li>
+								<a href="/search.html?search=github">
+									github (1)
+								</a>
+							</li>
+						
+							<li>
+								<a href="/search.html?search=css3">
+									css3 (1)
+								</a>
+							</li>
+						
+							<li>
+								<a href="/search.html?search=other">
+									other (1)
+								</a>
+							</li>
+						
 					</ul>
 				</div>
 				<div class="widget">
@@ -130,7 +162,7 @@
 						
 						<li><a href="javascript:void(0)">Github</a></li>
 						
-						<li><a href="javascript:void(0)">CSS3</a></li>
+						<li><a href="javascript:void(0)">Less</a></li>
 						
 						<li><a href="javascript:void(0)">智能机器人</a></li>
 						
@@ -259,6 +291,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"主要利用图灵机器人的接口来调起返回的数据",
 			        "images":"/res/img/page/robot.jpg",
+			        "categories":"other",
 			        "tags":"智能机器人"
 			    },
 			  {
@@ -268,6 +301,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"HTML5 DOM扩展",
 			        "images":"/res/img/page/img2.jpg",
+			        "categories":"html5",
 			        "tags":"HTML5"
 			    },
 			  {
@@ -277,6 +311,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"AMD 是 RequireJS 在推广过程中对模块定义的规范化产出。CMD 是 SeaJS 在推广过程中对模块定义的规范化产出。",
 			        "images":"/res/img/page/img7.jpg",
+			        "categories":"JavaScript",
 			        "tags":"JavaScript"
 			    },
 			  {
@@ -286,7 +321,8 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"Less CSS 是一个使用广泛的 CSS 预处理器。",
 			        "images":"/res/img/page/img6.jpg",
-			        "tags":"CSS3"
+			        "categories":"css3",
+			        "tags":"Less"
 			    },
 			  {
 			    	"title":"JavaScript 变量声明提升",
@@ -295,6 +331,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"JavaScript 变量声明提升 很容易忽略从而造成Bug",
 			        "images":"/res/img/page/img8.jpg",
+			        "categories":"JavaScript",
 			        "tags":"JavaScript"
 			    },
 			  {
@@ -304,6 +341,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"1.下载Rubyisntallersdownloads 一路下一步。",
 			        "images":"/res/img/page/jekyll/open-source.png",
+			        "categories":"Jekyll",
 			        "tags":"Jekyll"
 			    },
 			  {
@@ -313,6 +351,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"git上传本地文件到github",
 			        "images":"/res/img/page/img5.jpg",
+			        "categories":"github",
 			        "tags":"Github"
 			    },
 			  {
@@ -322,6 +361,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"Jekyll 教程",
 			        "images":"/res/img/page/img4.jpg",
+			        "categories":"Jekyll",
 			        "tags":"Jekyll"
 			    },
 			  {
@@ -331,6 +371,7 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"节奏大师小游戏",
 			        "images":"/res/img/page/img3.jpg",
+			        "categories":"html5",
 			        "tags":"HTML5"
 			    },
 			  {
@@ -340,12 +381,13 @@ var _hmt = _hmt || [];
 			        "author":"H君",
 			        "summary":"高效获取尾部字符串",
 			        "images":"/res/img/page/img1.jpg",
+			        "categories":"JavaScript",
 			        "tags":"JavaScript"
 			    }
 			  
 			]};
 		var filterData=_.filter(post.list,function(elem){
-			var tit=elem.tags.toLowerCase();
+			var tit=elem.categories.toLowerCase();
 			return tit.match(searchVal.toLowerCase()); 
 		});
 		var _html='';

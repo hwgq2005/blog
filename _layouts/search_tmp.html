@@ -47,12 +47,13 @@
 			        "author":"{{post.author}}",
 			        "summary":"{{post.intro}}",
 			        "images":"{{site.baseurl}}{{post.show_intro}}",
+			        "categories":"{{post.categories}}",
 			        "tags":"{{post.tags}}"
 			    }{% if forloop.last == false %},{% endif %}
 			  {% endfor %}
 			]};
 		var filterData=_.filter(post.list,function(elem){
-			var tit=elem.tags.toLowerCase();
+			var tit=elem.categories.toLowerCase();
 			return tit.match(searchVal.toLowerCase()); 
 		});
 		var _html='';
