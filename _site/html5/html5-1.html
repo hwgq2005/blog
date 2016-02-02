@@ -135,9 +135,6 @@ Countdown :60
 
 	 		<div class="music">
 				
-			<!-- 	<audio controls="controls" autoplay="autoplay" loop="loop" preload="auto" id="audio">
-				  <source src="http://dl.stream.qqmusic.qq.com/C200001OyHbk2MSIi4.m4a?vkey=E8C2D7E0D29896BB4B63F889F79E40AA73244F9DF5B12EABA5555D9BA7FBA7B5192FFBD4A54E9F7E2B739A75F669D74C9899F0B0B38E7B54&guid=24939200&fromtag=0" type="audio/mpeg" />
-				</audio> -->
 			</div>
 	 		<div class="pull-right">
 	 			<!-- 分享 -->
@@ -304,19 +301,19 @@ var _hmt = _hmt || [];
 </script>
 
 <script>
-	// var state=true;
-	// function toggleSound() {
-	//         var music = document.getElementById("audio");//获取ID
-	//         if (music.paused) { //判读是否播放
-	//                 music.play(); //没有就播放
-	//         }
-	//         state=false;
-	// }
-	// $(document).on('touchstart', function(){
-	// 	if (state) {
-	// 		toggleSound();
-	// 	};
-	// });
+	var state=true;
+	function toggleSound() {
+	        var music = document.getElementById("audio");//获取ID
+	        if (music.paused) { //判读是否播放
+	                music.play(); //没有就播放
+	        }
+	        state=false;
+	}
+	$(document).on('touchstart', function(){
+		if (state) {
+			toggleSound();
+		};
+	});
 </script>
 </body>
 </html>
