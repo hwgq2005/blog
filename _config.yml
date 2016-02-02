@@ -8,6 +8,7 @@ gems: [jekyll-paginate]
 paginate: 5
 paginate_path: "page:num"
 
+
 ##首页头部信息
 indet_title: H君的日志
 index_keyword: javaScritp 教程,html5 教程,css3 教程,webapp 教程
