@@ -1,6 +1,6 @@
 encoding: utf-8
 
-baseurl : 
+baseurl : ''
 # baseurl : http://www.lforever.cn
 permalink : /:categories/:title.html
 markdown: kramdown
