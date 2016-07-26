@@ -1,0 +1,13 @@
+---
+layout: nil
+---
+[
+    {% for post in site.posts %}
+
+    {
+        "title":{{post.title}},
+        "img_url":"res/authors/li.jpg"
+    }{% if forloop.last == false %},{% endif %}
+     {% endfor %}
+ 	 
+]
