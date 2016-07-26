@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="H君的日志" />
 <meta name="keywords" content="">
-<meta name="author" content="git@git.coding.net:hwgq2005/blog.git" />
+<meta name="author" content="git@github.com:hwgq2005/blog.git" />
 <link rel="icon" href="/res/img/favicon.ico">
 <link href="/res/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/res/css/fancybox/jquery.fancybox.css" rel="stylesheet">
@@ -135,6 +135,12 @@
 								</a>
 							</li>
 						
+							<li>
+								<a href="/search.html?search=gulp">
+									gulp (1)
+								</a>
+							</li>
+						
 					</ul>
 				</div>
 				<div class="widget">
@@ -173,6 +179,8 @@
 						<li><a href="javascript:void(0)">智能机器人</a></li>
 						
 						<li><a href="javascript:void(0)">地心营救</a></li>
+						
+						<li><a href="javascript:void(0)">gulp</a></li>
 						
 						
 					</ul>
@@ -293,6 +301,16 @@ var _hmt = _hmt || [];
 
 		var post = {
 			  "list":[{
+			    	"title":"Gulp - 前端自动化开发",
+			        "url":"/gulp/gulp-1.html",
+			        "date":"2016-07-26",
+			        "author":"H君",
+			        "summary":"用自动化构建工具提高工作效率。",
+			        "images":"/res/img/page/img9.jpg",
+			        "categories":"gulp",
+			        "tags":"gulp"
+			    },
+			  {
 			    	"title":"地心营救",
 			        "url":"/life/life-1.html",
 			        "date":"2016-02-02",
@@ -409,7 +427,7 @@ var _hmt = _hmt || [];
 			return tit.match(searchVal.toLowerCase()); 
 		});
 		var _html='';
-		// _html='<article><p>地心营救</p></article><article><p>与机器人对话</p></article><article><p>HTML5 DOM扩展</p></article><article><p>AMD和CMD的区别</p></article><article><p>快速入门 - Less</p></article><article><p>JavaScript 变量声明提升</p></article><article><p>Jekyll 安装教程</p></article><article><p>git上传本地文件到github</p></article><article><p>Jekyll 开发文档</p></article><article><p>节奏大师小游戏</p></article><article><p>如何高效获取尾部字符串</p></article>';
+		// _html='<article><p>Gulp - 前端自动化开发</p></article><article><p>地心营救</p></article><article><p>与机器人对话</p></article><article><p>HTML5 DOM扩展</p></article><article><p>AMD和CMD的区别</p></article><article><p>快速入门 - Less</p></article><article><p>JavaScript 变量声明提升</p></article><article><p>Jekyll 安装教程</p></article><article><p>git上传本地文件到github</p></article><article><p>Jekyll 开发文档</p></article><article><p>节奏大师小游戏</p></article><article><p>如何高效获取尾部字符串</p></article>';
 		if (filterData.length != 0) {
 			$.each(filterData, function(index, val) {
 				 _html+='<article>'

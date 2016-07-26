@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>地心营救 - H君的日志</title>
+<title>Gulp - 前端自动化开发 - H君的日志</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="33个男人在一场突如其来的灾难中被困地心深处，出路被塌陷的岩石全部封死，是坐以待毙，还是绝境求生？整整69天，兄弟同心，一路冲关，最终全部生还，创造了人类营救史上的最大奇迹。">
-<meta name="keywords" content="地心营救、电影、团结">
+<meta name="description" content="用自动化构建工具提高工作效率。">
+<meta name="keywords" content="JavaScript,HTML5,CSS3,Less">
 <meta name="author" content="H君">
 <link rel="icon" href="/res/img/favicon.ico">
 <link href="/res/css/bootstrap.min.css" rel="stylesheet" />
@@ -75,43 +75,185 @@
 
 	<section id="content">
 		<div class="container">
-	 		<h1 id="section">地心营救</h1>
+	 		<h1 id="gulp---">Gulp - 前端自动化开发</h1>
 
-<p><code class="highlighter-rouge">地心营救</code></p>
+<p><code class="highlighter-rouge">gulp</code></p>
 
 <hr />
 
-<p>今天下午没事看了部电影<code class="highlighter-rouge">&lt;地心营救&gt;</code>，尽管影片的故事能被轻松地猜到结局，但是这不妨碍其成为一部感人的电影。</p>
+<p><img src="../res/img/page/img9.jpg" alt="Gulp" /></p>
 
-<p><img src="../res/img/page/life/img0.jpg" alt="地心营救" /></p>
+<p>下面给大家讲解课题是《前端自动化开发-gulp》。在座的同学估计有的已经听说过、或者已经用过的。不过都没关系，知道的同学当做是温习吧。以下是我要讲的四点：</p>
 
-<p><img src="../res/img/page/life/img1.jpg" alt="地心营救" /></p>
+<p><br /></p>
 
-<p><img src="../res/img/page/life/img2.jpg" alt="地心营救" /></p>
+<h4 id="section">一、简单介绍：</h4>
 
-<p><img src="../res/img/page/life/img3.jpg" alt="地心营救" /></p>
+<h5 id="gulp">1.gulp是什么？</h5>
 
-<p><img src="../res/img/page/life/img4.jpg" alt="地心营救" /></p>
+<p><code class="highlighter-rouge">gulp</code>它主要是用做文件合并、文件压缩、语法检查、监听文件变化的一个工具。</p>
 
-<p><img src="../res/img/page/life/img5.jpg" alt="地心营救" /></p>
+<h5 id="gulp-1">2.为什么选择gulp？</h5>
 
-<p><img src="../res/img/page/life/img6.jpg" alt="地心营救" /></p>
+<p>因为它与其他工具对比，更容易使用，api更加简单，这对于我们的工作效率有着很大的一个提升。其优点包含以下4点：</p>
 
-<p><img src="../res/img/page/life/img7.jpg" alt="地心营救" /></p>
+<p>1.易于使用：通过代码优于配置的策略，Gulp 让简单的任务简单，复杂的任务可管理。</p>
 
-<p><img src="../res/img/page/life/img8.jpg" alt="地心营救" /></p>
+<p>2.构建快速: 利用 Node.js 流的威力，你可以快速构建项目并减少频繁的 IO 操作。</p>
 
+<p>3.插件高质: Gulp 严格的插件指南确保插件如你期望的那样简洁高质得工作。</p>
+
+<p>4.易于学习: 通过最少的 API，掌握 Gulp 毫不费力，构建工作尽在掌握：如同一系列流管道。</p>
+
+<p><br /></p>
+
+<h4 id="section-1">二、快速入门</h4>
+
+<p>1.在服务器端最容易的安装方式就是通过 <code class="highlighter-rouge">npm</code> （<code class="highlighter-rouge">node.js</code> 的包管理器），方法如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install -g gulp
+</code></pre>
+</div>
+
+<p>2.作为项目的开发依赖（devDependencies）安装：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install --save-dev gulp
+</code></pre>
+</div>
+
+<p>3.在项目根目录下创建一个名为 <code class="highlighter-rouge">gulpfile.js</code> 的文件：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var gulp = require('gulp');
+
+gulp.task('default', function() {
+  // 将你的默认的任务代码放在这
+});
+</code></pre>
+</div>
+
+<p>4.运行 gulp：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gulp
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="section-2">三、常用语法　</h4>
+
+<h4 id="gulptaskname-deps-fn">1.gulp.task(name[, deps], fn)</h4>
+
+<p>定义一个使用 Orchestrator 实现的任务（task）。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.task('somename', function() {
+  // 做一些事
+});
+</code></pre>
+</div>
+
+<h5 id="name">name</h5>
+<p>任务的名字，如果你需要在命令行中运行你的某些任务，那么，请不要在名字中使用空格。</p>
+
+<h5 id="deps">deps</h5>
+
+<p>类型： <code class="highlighter-rouge">Array</code></p>
+
+<p>一个包含任务列表的数组，这些任务会在你当前任务运行之前完成。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.task('mytask', ['array', 'of', 'task', 'names'], function() {
+  // 做一些事
+});
+</code></pre>
+</div>
+
+<h5 id="fn">fn</h5>
+
+<p>该函数定义任务所要执行的一些操作。通常来说，它会是这种形式：<code class="highlighter-rouge">gulp.src().pipe(someplugin())</code>。</p>
+
+<p><br /></p>
+
+<h4 id="gulpsrcglobs-options">2.gulp.src(globs[, options])</h4>
+
+<p>输出（Emits）符合所提供的匹配模式（glob）或者匹配模式的数组（array of globs）的文件。 
+将返回一个 Vinyl files 的 stream 它可以被 piped 到别的插件中。</p>
+
+<h5 id="globs">globs</h5>
+
+<p>类型： <code class="highlighter-rouge">String</code> 或 <code class="highlighter-rouge">Array</code></p>
+
+<h5 id="options">options</h5>
+
+<p>类型： <code class="highlighter-rouge">Object</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.src('client/templates/*.jade')
+  .pipe(jade())
+  .pipe(minify())
+  .pipe(gulp.dest('build/minified_templates'));
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="gulpdestpath-options">3.gulp.dest(path[, options])</h4>
+
+<p>能被 pipe 进来，并且将会写文件。并且重新输出（emits）所有数据，因此你可以将它 pipe 到多个文件夹。如果某文件夹不存在，将会自动创建它。</p>
+
+<h5 id="path">path</h5>
+
+<p>类型： <code class="highlighter-rouge">String</code> 或 <code class="highlighter-rouge">Function</code></p>
+
+<h5 id="options-1">options</h5>
+
+<p>类型： <code class="highlighter-rouge">Object</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.src('./client/templates/*.jade')
+  .pipe(jade())
+  .pipe(gulp.dest('./build/templates'))
+  .pipe(minify())
+  .pipe(gulp.dest('./build/minified_templates'));
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="gulpwatchglob-opts-cb">4.gulp.watch(glob[, opts, cb])</h4>
+
+<p>监视文件，并且可以在文件发生改动时候做一些事情。它总会返回一个 EventEmitter 来发射（emit）</p>
+
+<h5 id="globs-1">globs</h5>
+
+<p>类型： <code class="highlighter-rouge">String</code> 或 <code class="highlighter-rouge">Array</code></p>
+
+<h5 id="opts">opts</h5>
+
+<p>类型： <code class="highlighter-rouge">Object</code></p>
+
+<h5 id="cb">cb</h5>
+
+<p>类型： <code class="highlighter-rouge">Function</code></p>
+
+<p>每次变动需要执行的 callback。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.watch('js/**/*.js', function(event) {
+  console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+});
+</code></pre>
+</div>
+
+<p><br /></p>
+
+<h4 id="section-3">四、资源</h4>
+
+<p>官网：http://www.gulpjs.com.cn/</p>
+
+<p>实例：https://github.com/hwgq2005/gulp</p>
 
 	 		<div class="music">
-				
-				<audio controls="controls" autoplay="autoplay" loop="loop" preload="auto" id="audio">
-				  <source src="http://dl.stream.qqmusic.qq.com/C200000zcLcN49UG15.m4a?vkey=EE77A1F00319E7167202E1AC9A59CC07016FB1EB90EC9D1D966C984C1C29A87DDAEBA403657700B38269EB4216B3C70D7C2C6A20A130E8BD&guid=24939200&fromtag=0" type="audio/mpeg" />
-				</audio>
 				
 			</div>
 	 		<div class="pull-right">
 	 			<!-- 分享 -->
-<!-- <div class="ds-share" data-thread-key="/life/life-1" data-title="地心营救" data-images="/res/img/favicon.ico" data-content="33个男人在一场突如其来的灾难中被困地心深处，出路被塌陷的岩石全部封死，是坐以待毙，还是绝境求生？整整69天，兄弟同心，一路冲关，最终全部生还，创造了人类营救史上的最大奇迹。" data-url="/life/life-1.html">
+<!-- <div class="ds-share" data-thread-key="/gulp/gulp-1" data-title="Gulp - 前端自动化开发" data-images="/res/img/favicon.ico" data-content="用自动化构建工具提高工作效率。" data-url="/gulp/gulp-1.html">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-32">
       	<li ><span  style="font-size:12px;height:32px;display:inline-block;line-height: 32px;color:#999;" >分享到：</span></li>
@@ -152,7 +294,7 @@ var jiathis_config={
 	 		</div>
 	 		<div class="row">
 	 			<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/life/life-1" data-title="地心营救" data-url="/life/life-1.html"></div>
+	<div class="ds-thread" data-thread-key="/gulp/gulp-1" data-title="Gulp - 前端自动化开发" data-url="/gulp/gulp-1.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
