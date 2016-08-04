@@ -10,7 +10,7 @@ show_intro: /res/img/page/img7.jpg
 tags: [JavaScript]
 ---
 
-#AMD和CMD的区别
+# AMD和CMD的区别
 
 `AMD` `CMD`
 
@@ -32,7 +32,7 @@ CMD 规范：[点击这里](https://github.com/seajs/seajs/issues/242 "CMD"){:ta
 
 <br />
 
-####模块化的好处主要由以下几点：
+#### 模块化的好处主要由以下几点：
 
 
 1.更好的分离
@@ -45,7 +45,7 @@ CMD 规范：[点击这里](https://github.com/seajs/seajs/issues/242 "CMD"){:ta
 
 <br />
 
-####AMD与CMD主要区别：
+#### AMD与CMD主要区别：
 
 `AMD`推崇依赖前置，`CMD`推崇依赖就近。
 
