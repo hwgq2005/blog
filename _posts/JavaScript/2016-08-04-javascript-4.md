@@ -108,7 +108,9 @@ Macbook Pro 是标配，美其名曰“提高开发体验”
 ****
 
 ## &sect; 常用库
+
 ### DOM库
+
 标配是 jQuery，手机端有 Zepto 作为替代品  
 想要装逼且不怕坑，那就上 Mootools  
 Prototype？嗯，复古的逼格都是很高的  
@@ -244,11 +246,12 @@ Bower / spm / Component / Duo ...
 ## &sect; 模块化方案
 
 无论是  
-* RequireJS (AMD)
-* SeaJS (CMD)
-* KMD.js (KMD)
-* Browserify (CommonJS)
-* ...
+
+*   RequireJS (AMD)
+*   SeaJS (CMD)
+*   KMD.js (KMD)
+*   Browserify (CommonJS)
+*   ...
   
 最后都庆幸回归到 npm + Webpack  
 什么？SystemJS？有完没完...  
