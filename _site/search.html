@@ -95,7 +95,7 @@
 						
 							<li>
 								<a href="/search.html?search=JavaScript">
-									JavaScript (3)
+									JavaScript (4)
 								</a>
 							</li>
 						
@@ -126,12 +126,6 @@
 							<li>
 								<a href="/search.html?search=other">
 									other (1)
-								</a>
-							</li>
-						
-							<li>
-								<a href="/search.html?search=life">
-									life (1)
 								</a>
 							</li>
 						
@@ -177,8 +171,6 @@
 						<li><a href="javascript:void(0)">Less</a></li>
 						
 						<li><a href="javascript:void(0)">智能机器人</a></li>
-						
-						<li><a href="javascript:void(0)">地心营救</a></li>
 						
 						<li><a href="javascript:void(0)">gulp</a></li>
 						
@@ -301,6 +293,16 @@ var _hmt = _hmt || [];
 
 		var post = {
 			  "list":[{
+			    	"title":"前端JSer装逼手册",
+			        "url":"/javascript/javascript-4.html",
+			        "date":"2016-08-04",
+			        "author":"H君",
+			        "summary":"在装逼成本越来越高的 JS 圈，是时候充值一下了 ———— 题记",
+			        "images":"/res/img/page/img10.jpg",
+			        "categories":"JavaScript",
+			        "tags":"JavaScript"
+			    },
+			  {
 			    	"title":"Gulp - 前端自动化构建",
 			        "url":"/gulp/gulp-1.html",
 			        "date":"2016-07-26",
@@ -309,16 +311,6 @@ var _hmt = _hmt || [];
 			        "images":"/res/img/page/img9.jpg",
 			        "categories":"gulp",
 			        "tags":"gulp"
-			    },
-			  {
-			    	"title":"地心营救",
-			        "url":"/life/life-1.html",
-			        "date":"2016-02-02",
-			        "author":"H君",
-			        "summary":"33个男人在一场突如其来的灾难中被困地心深处，出路被塌陷的岩石全部封死，是坐以待毙，还是绝境求生？整整69天，兄弟同心，一路冲关，最终全部生还，创造了人类营救史上的最大奇迹。",
-			        "images":"/res/img/page/life/img8.jpg",
-			        "categories":"life",
-			        "tags":"地心营救"
 			    },
 			  {
 			    	"title":"与机器人对话",
@@ -427,7 +419,7 @@ var _hmt = _hmt || [];
 			return tit.match(searchVal.toLowerCase()); 
 		});
 		var _html='';
-		// _html='<article><p>Gulp - 前端自动化构建</p></article><article><p>地心营救</p></article><article><p>与机器人对话</p></article><article><p>HTML5 DOM扩展</p></article><article><p>AMD和CMD的区别</p></article><article><p>快速入门 - Less</p></article><article><p>JavaScript 变量声明提升</p></article><article><p>Jekyll 安装教程</p></article><article><p>git上传本地文件到github</p></article><article><p>Jekyll 开发文档</p></article><article><p>节奏大师小游戏</p></article><article><p>如何高效获取尾部字符串</p></article>';
+		// _html='<article><p>前端JSer装逼手册</p></article><article><p>Gulp - 前端自动化构建</p></article><article><p>与机器人对话</p></article><article><p>HTML5 DOM扩展</p></article><article><p>AMD和CMD的区别</p></article><article><p>快速入门 - Less</p></article><article><p>JavaScript 变量声明提升</p></article><article><p>Jekyll 安装教程</p></article><article><p>git上传本地文件到github</p></article><article><p>Jekyll 开发文档</p></article><article><p>节奏大师小游戏</p></article><article><p>如何高效获取尾部字符串</p></article>';
 		if (filterData.length != 0) {
 			$.each(filterData, function(index, val) {
 				 _html+='<article>'

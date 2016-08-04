@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>前端JSer装逼手册 - H君的日志</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="在装逼成本越来越高的 JS 圈，是时候充值一下了 ———— 题记">
+<meta name="keywords" content="前端JSer装逼手册">
+<meta name="author" content="H君">
+<link rel="icon" href="/res/img/favicon.ico">
+<link href="/res/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/res/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="/res/css/flexslider.css" rel="stylesheet" />
+<link href="/res/css/style.css" rel="stylesheet" />
+<link href="/res/skins/default.css" rel="stylesheet" />
+<link href="/res/js/google-code-prettify/tomorrow-night.css" rel="stylesheet" />
+
+<style>
+
+		.container .jiathis_style_32x32 .jiathis_counter.jiathis_bubble_style{
+			width:62px!important;
+		}
+		.jiathis_style > div{
+			width:320px!important;
+		}
+		.jiathis_style .searchTxt{
+			padding:0!important;
+			height:auto!important;
+			line-height:normal!important;
+		}
+		.jiathis_style .centerBottom{
+			display:none!important;
+		}
+		.jiathis_style .jiadiv_01 > div{
+			padding:0 5px!important;
+		}
+		.music{
+			margin-bottom: 10px;
+		}
+</style>
+</head>
+<body>
+<div id="wrapper">
+
+		<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href=""><span>H君</span>的日志</a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">Home</a></li>
+<!--                         <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Features <b class=" icon-angle-down"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="typography.html">Typography</a></li>
+                                <li><a href="components.html">Components</a></li>
+								<li><a href="pricingbox.html">Pricing box</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li class="active"><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header>
+
+	<section id="content">
+		<div class="container">
+	 		<h1 id="jser">前端JSer装逼手册</h1>
+<blockquote>
+  <p>在装逼成本越来越高的 JS 圈，是时候充值一下了 ———— 题记</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">JavaScript</code></p>
+
+<hr />
+
+<h2 id="sect-">§ 开发</h2>
+<p>Macbook Pro 是标配，美其名曰“提高开发体验”<br />
+什么？你还在用 Spotlight？赶紧给我换 Alfred！</p>
+
+<p>编辑器，Sublime / Atom / VS Code 三选一<br />
+虽然很想用IDE，但一定要忍住，并且与人解释道：<br />
+“启动速度慢，消耗资源多，不适合我这种完美主义者<br />
+如果不是为了美观，我宁愿使用 Vim / Emacs”</p>
+
+<p>命令行 iTerm2 + Oh-my-zsh<br />
+二逼青年用 bash，普通青年用 zsh<br />
+我们也只是想做一名普通人罢了</p>
+
+<p>查资料虽然都是百度<br />
+但一定要称都是用 Google<br />
+且要说英文而不是中文的“谷歌”<br />
+使用美式发音，当自己是湾区老司机</p>
+
+<p>尽管四级飘过，六级没过<br />
+在 Stack Overflow 上点数也低<br />
+但也要说每天都与各国程序员谈笑风生</p>
+
+<hr />
+
+<h2 id="sect--1">§ 语言</h2>
+<p>这年头如果还不用 Babel + ES6<br />
+都不好意思说自己是 JSer<br />
+当然还有 TypeScript / CoffeeScript / Dart …<br />
+没学过没关系<br />
+对外人说自己“略懂”即可<br />
+反正最后都是编译为 ES5，你懂的</p>
+
+<p>为了避免对方深入问<br />
+此时你应该继续发表高见：<br />
+“JS 是基于原型的函数式弱类语言<br />
+引入类与强类真的是不伦不类”<br />
+说到此，顿一下，表现出百感交集<br />
+随后继续徐徐道：<br />
+“可大势所趋，吾等小辈惟随波逐流”<br />
+说罢，即可挥挥衣袖转身离去</p>
+
+<blockquote>
+  <p>在这里不得不提一下，虽然使用 Babel 转码可以尽情装逼<br />
+但其对某些新特性的转换相当二逼（详情请看<a href="https://github.com/lcxfs1991/blog/issues/9">这篇文章</a>）<br />
+一句话：Babel 虽好，但别贪杯哦（推荐<a href="http://babeljs.io/repl">Babel 在线实时编译</a>）</p>
+</blockquote>
+
+<hr />
+
+<h2 id="sect--2">§ 代码风格</h2>
+<p>摒 弃JSLint / JSHint / JSCS，拥抱 ESLint<br />
+尽管平时只是个搬砖的<br />
+但时刻以世界顶级企业的规范约束自己<br />
+于是 <code class="highlighter-rouge">eslint-config-airbnb</code> 成了我们的标配</p>
+
+<p>一般新手是这样写的：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Low */
+if (a) {
+  return b;
+} else {
+  return c;
+}
+</code></pre>
+</div>
+
+<p>逼格稍微高一点的这样写：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Bigger */
+if (a) return b; // 提前结束，免用大括号与else
+return c;
+</code></pre>
+</div>
+
+<p>实际上还能更进一步：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Bigger than bigger */
+return a ? b : c // 不要写分号，留白予人想象的空间
+</code></pre>
+</div>
+
+<p>总而言之，代码越短，可读性越差，逼格越高<br />
+不能让人随便看懂，就像人不能轻易让人看透</p>
+
+<hr />
+
+<h2 id="sect--3">§ 奇技淫巧</h2>
+<blockquote>
+  <p>罄竹难书</p>
+</blockquote>
+
+<hr />
+
+<h2 id="sect--4">§ 常用库</h2>
+<p>### DOM库
+标配是 jQuery，手机端有 Zepto 作为替代品<br />
+想要装逼且不怕坑，那就上 Mootools<br />
+Prototype？嗯，复古的逼格都是很高的</p>
+
+<p>一定要说自己纯粹为了优雅简洁，不得不用 jQuery<br />
+（如何做到 jQuery-free，请看<a href="http://www.ruanyifeng.com/blog/2013/05/jquery-free.html">这篇文章</a>）</p>
+
+<p>当然，就算是写 jQuery<br />
+也能体现出逼格<br />
+我们来看看新手一般是怎么写的：</p>
+
+<p>javascript</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Low */
+var value = $(".container .myInput1").val();
+$(".container .myInput2").val(value);
+$(".container .myInput3").attr("disabled", "disabled");
+</code></pre>
+</div>
+
+<p>用双引号，以及对选择器性能认知不足，是新手的特征<br />
+一般直接使用类选择器的，都是对用户体验很有自信的</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Bigger */
+// 把div.container命名为myDiv
+var $myDiv = $('#myDiv'), // 缓存DOM
+  v = $myDiv.find('.myInput1').val();
+
+$myDiv
+  .find('.myInput2').val(v)
+  .end() // 坚持链式调用
+  .find('.myInput3').attr('disabled', 'disabled');
+</code></pre>
+</div>
+
+<p>（有关 jQuery 选择器的性能以及最佳实践，请看<a href="http://www.ruanyifeng.com/blog/2011/08/jquery_best_practices.html">这篇文章</a>）</p>
+
+<h3 id="ui">UI</h3>
+<p>BootStrap 烂大街<br />
+不是我们的菜<br />
+我们选择的标准是门槛要高<br />
+于是<br />
+Foundation6 / Ant Design<br />
+映入眼帘</p>
+
+<p>请谨慎使用<br />
+Semantic UI / UIkit / Amaze UI …<br />
+避免不能自拔</p>
+
+<h3 id="section">工具库</h3>
+<p>后浪 lodash 把前浪 underscore 拍死在沙滩上<br />
+于是它成了唯一的选择<br />
+不过为了保持逼格<br />
+我们要尽量使用原汁原味的 ES6<br />
+就算要用也一定要注意素质：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Low */
+import _ from 'lodash' // 把整个lodash打包进去了
+
+/* Bigger */
+import isEmpty from 'lodash/isEmpty' // 仅把个别函数打包
+</code></pre>
+</div>
+
+<h3 id="section-1">模板引擎</h3>
+<p>逼格最高显然是 Jade<br />
+但改名为 Pug（哈巴狗）后<br />
+就像是小龙女被尹志平不可描述后<br />
+再也无爱了<br />
+从此以后<br />
+留了胡子（Mustache）<br />
+扶着把手（Handlebars）<br />
+默默耕耘</p>
+
+<h3 id="section-2">异步编程</h3>
+<p>这里不谈 Q / Bluebird / Async / co / then 等库<br />
+皆因Babel已经支持所有的异步编程解决方案<br />
+当前最常用的还是Promise</p>
+
+<p>有些新手会写出这种代码：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Low */
+// 找出与用户1同市的所有用户
+User.findById(1).then((user) =&gt; {
+  User.find({ city: user.city }).then((users) =&gt; {
+    res.json(users.toJSON())
+  })
+})
+</code></pre>
+</div>
+
+<p>这属于 Promise<a href="http://bluebirdjs.com/docs/anti-patterns.html">反模式</a>，与回调函数无异</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Bigger */
+User.findById(1).then((user) =&gt; {
+  return User.find({ city: user.city }) // 返回Promise
+}).then((users) =&gt; {
+  res.json(users.toJSON())
+}).catch(next)
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="sect--5">§ 包管理工具</h2>
+
+<p>如果你被<br />
+Bower / spm / Component / Duo …<br />
+坑过<br />
+请回到 npm 的怀抱<br />
+什么？jspm？有完没完…</p>
+
+<hr />
+
+<h2 id="sect--6">§ 构建工具</h2>
+
+<p>想当年我不懂什么是自动构建工具<br />
+他们说：生命苦短，我们用 Grunt</p>
+
+<p>好不容易用上 Grunt 的时候<br />
+他们又说：Gulp 基于流，符合 Unix 哲学</p>
+
+<p>之后我虔诚地换上了 Gulp<br />
+他们双说：Webpack 最好用</p>
+
+<p>最后终于用上了 Webpack<br />
+他们叒说：FIS3 约不约？。。。</p>
+
+<hr />
+
+<h2 id="sect--7">§ 模块化方案</h2>
+
+<p>无论是<br />
+* RequireJS (AMD)
+* SeaJS (CMD)
+* KMD.js (KMD)
+* Browserify (CommonJS)
+* …</p>
+
+<p>最后都庆幸回归到 npm + Webpack<br />
+什么？SystemJS？有完没完…</p>
+
+<hr />
+
+<h2 id="sect-mv----">§ MV*框架 / 技术栈 / 大型框架</h2>
+
+<h3 id="backbone">Backbone</h3>
+
+<p>每个人都有一段不堪回首的经历<br />
+就像当年在 QQ 空间发“你若安好便是晴天”的说说<br />
+Backbone就是这样子的存在</p>
+
+<h3 id="angular">Angular</h3>
+
+<p>一定要边吐槽边用，不然就一点都不 ng 了<br />
+“学习曲线陡峭”不应从你口中说出<br />
+“学习过程趣味盎然”才是你的菜</p>
+
+<h3 id="vue">Vue</h3>
+
+<p>一定要用“优雅”来形容<br />
+就像用 ES6 一定要“大胆”</p>
+
+<h3 id="react">React技术栈</h3>
+
+<p>React 已经是前端高逼格的代名词<br />
+所以无论懂不懂都要喊：<br />
+“React 大法好”<br />
+因为这是一种信仰<br />
+称赞 JSX 的标新立异<br />
+谈谈 Flux / Redux<br />
+扯扯 Elm / RxJS<br />
+每到深入则戛然而止：<br />
+“太深入的太抽象，你们未必能理解”<br />
+由此，听者只会更加崇拜你</p>
+
+<h3 id="section-3">其他</h3>
+
+<p>还有国内相对小众的 Ember / Knockout / Avalon<br />
+（请别再把 YUI / Dojo / Ext / KISSY 扯进来了好伐）</p>
+
+<hr />
+
+<h2 id="sect---">§ 混合 / 原生开发</h2>
+
+<p>自从 PhoneGap 出来后<br />
+貌似我们也能抢 安卓/iOS 的饭碗了<br />
+Ionic 更是将 Hybrid APP 推向高潮</p>
+
+<p>不过混合始终比不上原生<br />
+于是 React Native 应运而生<br />
+最近多了一个新的选择：Weex</p>
+
+<p>别忘了还有桌面的 nw.js 以及 Electron</p>
+
+<blockquote>
+  <p>JSer从一入门开始，就掌握了改变世界的能力<br />
+也比其他程序员更容易走向人生的巅峰</p>
+</blockquote>
+
+<hr />
+
+<h2 id="sect--8">§ 后端框架</h2>
+
+<p>我们一直标榜自己是全栈<br />
+不玩几下后端框架怎么行</p>
+
+<p>快递员用 Express<br />
+风湿患者用 Koa<br />
+哲学家用 ThinkJS<br />
+水手用 Sails</p>
+
+<p>还有全栈的 Meteor<br />
+上述都用一遍<br />
+相信也快转行了</p>
+
+<hr />
+
+<h2 id="sect--9">§ 服务器进程管理</h2>
+<p>既然都玩上了后端框架<br />
+不懂部署服务器怎么行</p>
+
+<p>二逼青年用 supervisor / nodemon<br />
+文艺青年用 forever<br />
+普通青年用 pm2<br />
+装逼青年用 Tmux + node</p>
+
+<hr />
+
+<p>内容来自：<a href="https://github.com/kenberkeley/bigger-jser" target="_blank">https://github.com/kenberkeley/bigger-jser</a></p>
+
+	 		<div class="music">
+				
+			</div>
+	 		<div class="pull-right">
+	 			<!-- 分享 -->
+<!-- <div class="ds-share" data-thread-key="/javascript/javascript-4" data-title="前端JSer装逼手册" data-images="/res/img/favicon.ico" data-content="在装逼成本越来越高的 JS 圈，是时候充值一下了 ———— 题记" data-url="/javascript/javascript-4.html">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-32">
+      	<li ><span  style="font-size:12px;height:32px;display:inline-block;line-height: 32px;color:#999;" >分享到：</span></li>
+        <li><a class="ds-qq" href="javascript:void(0);" data-service="qq"></a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo"></a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone"></a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt"></a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat"></a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div> -->
+
+
+ <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style_32x32">
+<a class="jiathis_button_cqq"></a>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_weixin"></a>
+<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+
+				
+	 		</div>
+	 		<div class="row">
+	 			<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="/javascript/javascript-4" data-title="前端JSer装逼手册" data-url="/javascript/javascript-4.html"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hwgq2005"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+<!-- 多说公共JS代码 end -->
+			</div>
+		</div>
+	</section>
+	<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">交流群</h5>
+					
+					<p>
+						前端交流群：364778978 
+					</p>
+					<p>
+						设计交流群（深圳）：341287750
+					</p>
+					<p>( 注：申请请注明来自H君的日志 )</p>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">宗旨</h5>
+					<ul class="link-list">
+						<li><a href="javascript:;">低调做人、高调做事</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">项目推荐</h5>
+					<ul class="link-list">
+						<li><a href="javascript:;" target="_blank">Hbook</a></li>
+						<li><a href="javascript:;" target="_blank">Rhythm</a></li>
+						<li><a href="javascript:;" target="_blank">Carousel</a></li>
+						<li><a href="javascript:;" target="_blank">Fan.js</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-lg-3">
+				<div class="widget">
+					<h5 class="widgetheading">作者</h5>
+					
+						<div class="flickr_badge" >
+							<img src="/res/authors/hjun.jpg" alt="H君" title="">
+						</div>
+					
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="sub-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="copyright">
+						<p>
+							<span>&copy; Blog 2014-2016 All right reserved. By H君</span>
+						</p>
+					</div>
+				</div>
+				 <div class="col-lg-6">
+					<ul class="social-network">
+						<!-- <li><a href="https://github.com/hwgq2005/blog" target="_blank" data-placement="top" title="GitHub"><i class="fa fa-github"></i></a></li> -->
+					<!-- 	<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</footer>
+
+	
+
+</div>
+
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<input type="hidden" id="baseurl" value=""/>
+<script src="/res/js/jquery.js"></script>
+<!-- <script src="/res/js/jquery.easing.1.3.js"></script> -->
+<script src="/res/js/bootstrap.min.js"></script>
+<script src="/res/js/jquery.fancybox.pack.js"></script>
+<script src="/res/js/jquery.fancybox-media.js"></script>
+<script src="/res/js/google-code-prettify/prettify.js"></script>
+<script src="/res/js/portfolio/jquery.quicksand.js"></script>
+<script src="/res/js/portfolio/setting.js"></script>
+<script src="/res/js/jquery.flexslider.js"></script>
+<script src="/res/js/animate.js"></script>
+<script src="/res/js/custom.js"></script>
+<script src="/res/js/lodash.core.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?efa15e3509612761ffd114dce7833efa";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script>
+	var state=true;
+	function toggleSound() {
+	        var music = document.getElementById("audio");//获取ID
+	        if (music.paused) { //判读是否播放
+	                music.play(); //没有就播放
+	        }
+	        state=false;
+	}
+	$(document).on('touchstart', function(){
+		if (state) {
+			toggleSound();
+		};
+	});
+</script>
+</body>
+</html>
