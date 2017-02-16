@@ -1,7 +1,7 @@
 encoding: utf-8
 
 # baseurl : 'http://hwgq2005.github.io/blog'
-baseurl : http://www.lforever.cn
+baseurl : http://blog.bookcss.com
 permalink : /:categories/:title.html
 markdown: kramdown
 gems: [jekyll-paginate]
