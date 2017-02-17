@@ -1,7 +1,7 @@
 encoding: utf-8
 
 # baseurl : ''
-baseurl : http://blog.bookcss.com'
+baseurl : http://blog.bookcss.com
 permalink : /:categories/:title.html
 markdown: kramdown
 gems: [jekyll-paginate]
