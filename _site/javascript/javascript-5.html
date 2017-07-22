@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>快速入门 - Less - H君的日志</title>
+<title>JavaScript常用函数集合 - H君的日志</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Less CSS 是一个使用广泛的 CSS 预处理器。">
-<meta name="keywords" content="JavaScript,HTML5,CSS3,Less">
+<meta name="description" content="JavaScript常用函数集合">
+<meta name="keywords" content="JavaScript常用函数">
 <meta name="author" content="H君">
 <link rel="icon" href="/res/img/favicon.ico">
 <link href="/res/css/bootstrap.min.css" rel="stylesheet" />
@@ -75,190 +75,262 @@
 
 	<section id="content">
 		<div class="container">
-	 		<h1 id="快速入门---less">快速入门 - Less</h1>
+	 		<h1 id="javascript常用函数集合">JavaScript常用函数集合</h1>
 
-<p><code class="highlighter-rouge">Less</code></p>
+<p><code class="highlighter-rouge">JavaScript</code></p>
 
 <hr />
 
-<p><img src="../res/img/page/img6.jpg" alt="jekyll开发文档" /></p>
+<blockquote>
+  <p>以下是个人收藏及个人编写的代码，仅供大家参考：</p>
+</blockquote>
 
-<p>下面给大家讲解下<code class="highlighter-rouge">Less</code>，纯手工，入门级别，相信没学过的人阅读完后就懂了，以下是我要讲的四点：</p>
-
-<p><br /></p>
-
-<h4 id="一简单介绍">一、简单介绍：</h4>
-
-<p><code class="highlighter-rouge">Less</code> CSS 是一个使用广泛的 CSS 预处理器。</p>
-
-<p>对 CSS 进行扩展，减少很多 CSS 的代码量。</p>
-
-<p><code class="highlighter-rouge">LESS</code> 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数。</p>
-
-<p><code class="highlighter-rouge">LESS</code> 既可以在 客户端 上运行 (支持<code class="highlighter-rouge">IE 6+</code>, <code class="highlighter-rouge">Webkit</code>, <code class="highlighter-rouge">Firefox</code>)，也可一在服务端运行 (借助 <code class="highlighter-rouge">Node.js</code>)。</p>
-
-<p><br /></p>
-
-<h4 id="二快速入门">二、快速入门</h4>
-
-<p>在服务器端最容易的安装方式就是通过 <code class="highlighter-rouge">npm</code> （<code class="highlighter-rouge">node.js</code> 的包管理器），方法如下：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install -g less
-</code></pre>
-</div>
-
-<p>安装 <code class="highlighter-rouge">Less</code> 后，就可以在命令行上调用 <code class="highlighter-rouge">Less</code> 编译器了，如下：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lessc gloal.less
-</code></pre>
-</div>
-
-<p>你可以将输出重定向到一个文件：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lessc gloal.less &gt; gloal.css
-</code></pre>
-</div>
-
-<p><br /></p>
-
-<h4 id="三常用语法">三、常用语法　</h4>
-
-<h5 id="1变量">1.变量</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@color: #4d926f; 
-#header { color: @color; }
-#header { color: #4d926f; }
-
-@color: #253636; 
-@color: #ff3636;     		//覆盖第一次的定义
-#header {color: @color;}        //多次反复解析
-#header {color: #ff3636;}
-</code></pre>
-</div>
-
-<h5 id="2mixins混入-类似函数或宏">2.Mixins——混入, 类似函数或宏</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>.borderRadius(@radius:3px){ 
-    -moz-border-radius: @radius; 
-    -webkit-border-radius: @radius; 
-    border-radius: @radius; 
-} 
-#header { .borderRadius(10px); } 
-.btn { .borderRadius} 
-</code></pre>
-</div>
-
-<p>编译后：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>#header { 
-    -moz-border-radius: 10px; 
-    -webkit-border-radius: 10px; 
-    border-radius: 10px; 
-} 
-.btn {
-    -moz-border-radius: 3px; 
-    -webkit-border-radius: 3px; 
-    border-radius: 3px; 
-}  
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">Mixins</code>注意事项：</p>
-
-<p>a.可以不使用参数 .wrap(){…} .pre{ .wrap }</p>
-
-<p>b.内置变量<code class="highlighter-rouge">@arguments</code>代表所有参数(运行时)的值</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>.boxShadow(@x:0,@y:0,@blur:1px,@color:#000){ 
-	box-shadow: @arguments; 
-} 
-</code></pre>
-</div>
-
-<p>注意，在参数没有默认值的前提下使用<code class="highlighter-rouge">@arguments</code>调用时必须赋值，否则会导致整个页面内的<code class="highlighter-rouge">less</code>语法出错而失效。</p>
-
-<p>c. <code class="highlighter-rouge">Mixins</code>必须使用ID或者类，即#xx或.xx，否则无效。</p>
-
-<h5 id="3嵌套">3.嵌套</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>#header { 
-    &amp;.fl{ float: left; }
-    .mln { margin-left: 0; } 
-} 
-</code></pre>
-</div>
-
-<p>编译后：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>#header.fl{float: left;} 
-#header .mln {margin-left: 0;}
-</code></pre>
-</div>
-
-<h5 id="4嵌套">4.嵌套</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@init: #111111; 
-@transition: @init*2; 
-.switchColor { 
-     color: @transition;     
+<div class="highlighter-rouge"><pre class="highlight"><code>/**
+ * 获取url参数值
+ * @param  {string} name [参数名称]
+ */
+function getQueryString(name) {
+    var reg = new RegExp("(^|&amp;)" + name + "=([^&amp;]*)(&amp;|$)");
+    var r = window.location.search.slice(1).match(reg);
+    return r != null ? unescape(r[2]) : null;
 }
-.switchColor { 
-   color: #222222; 
+
+/**
+ * 匹配终端
+ */
+function browser() {
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+    var flag = true;
+    for (var v = 0; v &lt; Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) &gt; 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
 }
-.lightColor{
-   lighten(@color, 10%);
+
+/**
+ * cookies操作 
+ */
+var cookies = {
+    //设置cookies
+    set: function(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else var expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+    },
+
+    //获取cookies
+    get: function(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i &lt; ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    },
+
+    //清除cookies
+    erase: function(name) {
+        this.set(name, "", -1);
+    }
+}
+
+/**
+ * 获取屏幕横屏、竖屏
+ */
+function orient() {
+    var orientation;
+    if (window.orientation == 90 || window.orientation == -90) {
+        //ipad、iphone竖屏；Andriod横屏
+        orientation = 'landscape';
+    } else if (window.orientation == 0 || window.orientation == 180) {
+        //ipad、iphone横屏；Andriod竖屏
+        orientation = 'portrait';
+    }
+    return orientation;
+}
+
+
+/**
+ * 合并对象
+ */
+function extend(to, from) {
+    for (var key in from) {
+        to[key] = from[key];
+    }
+    return to;
+}
+
+/**
+ *  判断是否存在class
+ */
+function hasClass(obj, cls) {
+    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
+}
+
+/**
+ *  添加class
+ */
+function addClass(obj, cls) {
+    if (!hasClass(obj, cls)) obj.className += " " + cls;
+}
+
+/**
+ *  移除class
+ */
+function removeClass(obj, cls) {
+    if (hasClass(obj, cls)) {
+        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
+        obj.className = obj.className.replace(reg, ' ');
+    }
+}
+
+/**
+ *  获取兄弟元素
+ */
+function sibling(elem) {
+    var obj = [],
+        elemArr = elem.parentNode.children;
+
+    for (var i = 0; i &lt; elemArr.length; i++) {
+        if (elemArr[i] != elem) {
+            obj.push(elemArr[i]);
+        }
+    }
+    return obj;
+}
+
+/**
+ *  获取前一个兄弟节点
+ */
+function prevSibling(node) {
+    var tempFirst = node.parentNode.firstChild;
+    if (node == tempFirst) return null;
+    var tempObj = node.previousSibling;
+    while (tempObj.nodeType != 1 &amp;&amp; tempObj.previousSibling != null) {
+        tempObj = tempObj.previousSibling;
+    }
+    return (tempObj.nodeType == 1) ? tempObj : null;
+}
+
+/**
+ *  获取下一个兄弟节点
+ */
+function nextSibling(node) {
+    var tempLast = node.parentNode.lastChild;
+    if (node == tempLast) return null;
+    var tempObj = node.nextSibling;
+    while (tempObj.nodeType != 1 &amp;&amp; tempObj.nextSibling != null) {
+        tempObj = tempObj.nextSibling;
+    }
+    return (tempObj.nodeType == 1) ? tempObj : null;
+}
+
+/**
+ * 滚动加载数据
+ * @param  {[string]}  distance  [底部距离]
+ * @param  {[number]}  thisPage  [当前页]
+ * @param  {[number]}  totalPage [总页数]
+ * @param  {[Boolean]} isLoad    [是否加载完成]
+ */
+function distanceScroll(distance, thisPage, totalPage, isLoad) {
+    var scrollTop = document.body.scrollTop,
+        docHeight = document.body.clientHeight,
+        screenHeight = window.screen.availHeight;
+    differ = scrollTop &gt; docHeight - screenHeight - distance;
+    if (differ &amp;&amp; isLoad &amp;&amp; thisPage &lt;= totalPage) {
+        isLoad = !isLoad;
+        vm.getList(thisPage);
+    }
+}
+
+/**
+ * 格式化金额
+ * @param  {[number]}  number  [要格式化的数字]
+ * @param  {[number]}  decimals  [保留几位小数]
+ * @param  {[string]}  dec_point [小数点符号]
+ * @param  {[string]} thousands_sep    [千分位符号]
+ */
+function numberFormat(number, decimals, dec_point, thousands_sep) {
+
+    number = (number + '').replace(/[^0-9+-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function(n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.ceil(n * k) / k;
+        };
+
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    var re = /(-?\d+)(\d{3})/;
+    while (re.test(s[0])) {
+        s[0] = s[0].replace(re, "$1" + sep + "$2");
+    }
+
+    if ((s[1] || '').length &lt; prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
+
+
+/**
+ * 判断是否为微信内核
+ */
+function isWeiXin() {
+    var ua = window.navigator.userAgent.toLowerCase()
+    ua.match(/MicroMessenger/i) == 'micromessenger' ?
+        return true: return false
+}
+
+/**
+ * 倒计时
+ * @param  {[number]}  count  [秒数]
+ * @param  {[string]}  fmtStr  [倒计时文字]
+ * @param  {[string]}  endStr [结束后文字]
+ * countDown(60, '#{count} s', '重新获取')
+ */
+function countDown(count, fmtStr, endStr) {
+
+    var _self = this,
+        _count = count || 60,
+        _fmtStr = fmtStr || '#{count}s',
+        _endStr = endStr || '获取验证码',
+        _interval = null;
+    var currentTarget = event.currentTarget;
+    currentTarget.innerHTML = _fmtStr.replace('#{count}', _count);
+    _interval = setInterval(function() {
+        _count--;
+        if (_count == 0) {
+            currentTarget.innerHTML = _endStr;
+            currentTarget.classList.remove('disabled');
+            clearInterval(_interval);
+        } else {
+            currentTarget.innerHTML = _fmtStr.replace('#{count}', _count);
+        }
+    }, 1000);
 }
 </code></pre>
 </div>
-
-<p>运算主要是针对任何数字、颜色、变量的操作，支持加、减、乘、除、()或者更复杂的综合运算；而<code class="highlighter-rouge">Functions</code>主要是针对颜色，同时提供了部分数学函数，具体的API可参阅文档。</p>
-
-<h5 id="5继承">5.继承</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>.animal {  background-color: black;  color: white;}
-.bear {  &amp;:extend(.animal);  background-color: brown;}
-</code></pre>
-</div>
-
-<p>当前还有其他继承的写法，我这只是写了其中的一种，详细可在官网上查看文档。</p>
-
-<h5 id="6作用域">6.作用域</h5>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>@var: red; 
-#page { 
-    @var: white;
-    #header { color: @var; // white } 
-}
-#footer { 
-    color: @var; // red 
-}
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">Less</code>中的变量、<code class="highlighter-rouge">Mixins</code>等的作用域都只是当前文件！</p>
-
-<h5 id="7注释">7.注释</h5>
-
-<p>单行注释方式： //单行注释</p>
-
-<p>单行、多行注释： /* 注释 多行注释 */</p>
-
-<p><br /></p>
-
-<h4 id="四资源">四、资源</h4>
-
-<p>官网：lesscss.org</p>
-
-<p>中文社区：www.lesscss.net</p>
-
-<p>在线LESS编译：http://tool.oschina.net/less</p>
 
 	 		<div class="music">
 				
 			</div>
 	 		<div class="pull-right">
 	 			<!-- 分享 -->
-<!-- <div class="ds-share" data-thread-key="/css3/css3-1" data-title="快速入门 - Less" data-images="/res/img/favicon.ico" data-content="Less CSS 是一个使用广泛的 CSS 预处理器。" data-url="/css3/css3-1.html">
+<!-- <div class="ds-share" data-thread-key="/javascript/javascript-5 " data-title="JavaScript常用函数集合" data-images="/res/img/favicon.ico" data-content="JavaScript常用函数集合" data-url="/javascript/javascript-5.html">
     <div class="ds-share-inline">
       <ul  class="ds-share-icons-32">
       	<li ><span  style="font-size:12px;height:32px;display:inline-block;line-height: 32px;color:#999;" >分享到：</span></li>
@@ -299,7 +371,7 @@ var jiathis_config={
 	 		</div>
 	 		<div class="row">
 	 			<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="/css3/css3-1" data-title="快速入门 - Less" data-url="/css3/css3-1.html"></div>
+	<div class="ds-thread" data-thread-key="/javascript/javascript-5 " data-title="JavaScript常用函数集合" data-url="/javascript/javascript-5.html"></div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
