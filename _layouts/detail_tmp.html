@@ -28,9 +28,7 @@
 		.jiathis_style .jiadiv_01 > div{
 			padding:0 5px!important;
 		}
-		.music{
-			margin-bottom: 10px;
-		}
+	
 </style>
 </head>
 <body>
@@ -40,13 +38,6 @@
 	<section id="content">
 		<div class="container">
 	 		{{content}}
-	 		<div class="music">
-				{% if page.tags[0] == "地心营救" %}
-				<audio controls="controls" autoplay="autoplay" loop="loop" preload="auto" id="audio">
-				  <source src="http://dl.stream.qqmusic.qq.com/C200000zcLcN49UG15.m4a?vkey=EE77A1F00319E7167202E1AC9A59CC07016FB1EB90EC9D1D966C984C1C29A87DDAEBA403657700B38269EB4216B3C70D7C2C6A20A130E8BD&guid=24939200&fromtag=0" type="audio/mpeg" />
-				</audio>
-				{% endif %}
-			</div>
 	 		<div class="pull-right">
 	 			{% include share.html%}				
 	 		</div>
@@ -62,20 +53,6 @@
 
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 {% include script.html%}
-<script>
-	var state=true;
-	function toggleSound() {
-	        var music = document.getElementById("audio");//获取ID
-	        if (music.paused) { //判读是否播放
-	                music.play(); //没有就播放
-	        }
-	        state=false;
-	}
-	$(document).on('touchstart', function(){
-		if (state) {
-			toggleSound();
-		};
-	});
-</script>
+
 </body>
 </html>
