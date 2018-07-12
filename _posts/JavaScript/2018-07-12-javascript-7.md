@@ -6,7 +6,7 @@ categories: JavaScript
 keyword: 前端开发规范
 author: H君
 show_type: image
-show_intro: /res/img/page/img14.jpeg
+show_intro: /res/img/page/img14.jpg
 tags: [JavaScript]
 ---
 
@@ -20,7 +20,6 @@ tags: [JavaScript]
 
 > 在多人协作的团队里，需要制定一套合理的规范，才会让开发更加方便、统一。这是我之前团队里制定的一个前端规范，现在跟大家分享一下，希望可以互相交流下。
 
-[TOC]
 
 ### 一、命名规则
 
@@ -45,8 +44,8 @@ tags: [JavaScript]
         
     自定义插件：
         
-        假设项目组 Tronker 使用 't-' 开头：t-form.css、t-page.css 等。
-        假设项目组 Sofiice 使用 's-' 开头：s-form.css、s-page.css 等。
+        某项目组 Tronker 使用 't-' 开头：t-form.css、t-page.css 等。
+        某项目组 Sofiice 使用 's-' 开头：s-form.css、s-page.css 等。
 
 - js 文件
 
