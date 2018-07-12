@@ -1,7 +1,7 @@
 ---
 layout: detail_tmp
 title: 前端开发规范
-intro: 前端开发规范
+intro: 在多人协作的团队里，需要制定一套合理的规范，才会让开发更加方便、统一。这是我之前团队里制定的一个前端规范，现在跟大家分享一下，希望可以互相交流下。
 categories: JavaScript
 keyword: 前端开发规范
 author: H君
