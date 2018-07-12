@@ -1,7 +1,7 @@
 ---
 layout: detail_tmp
 title: JavaScript常用函数集合
-intro: JavaScript常用函数集合
+intro: 以下是个人收藏及个人编写的代码，仅供大家参考。
 categories: JavaScript
 keyword: JavaScript常用函数
 author: H君
