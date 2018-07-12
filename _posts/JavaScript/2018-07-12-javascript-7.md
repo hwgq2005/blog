@@ -6,7 +6,7 @@ categories: JavaScript
 keyword: 前端开发规范
 author: H君
 show_type: image
-show_intro: /res/img/page/img14.jepg
+show_intro: /res/img/page/img14.jpeg
 tags: [JavaScript]
 ---
 
