@@ -1,12 +1,12 @@
 # 开发文档
 
-#需要遵守的[约定](http://hwgq2005.github.io/blog/jekyll/md-test.html) 
+需要遵守的[约定](http://blog.bookcss.com/jekyll/jekyll.html) 
 
-1.提交各自文件`xxx.md`到 *_posts* 文件夹下。 
+1. 提交各自文件`xxx.md`到 *_posts* 文件夹下。 
 
-2.`xxx.md` 的命名规范 `2015-03-12-title.md`
+2. `xxx.md` 的命名规范 `2015-03-12-title.md`
 
-3.`xxx.md`的配置 
+3. `xxx.md`的配置 
 
 &nbsp;&nbsp;3.1 categories *_posts* 下的文件夹/分类 
 
@@ -24,7 +24,4 @@
 
 &nbsp;&nbsp;3.6 layout 选择模板（detail_tmp）
 
-4.[markdown](http://lixiaoshenxian.com/markdown.html) 写作方式 
-
------------------- 
 
